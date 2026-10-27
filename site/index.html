@@ -411,7 +411,7 @@
     for (let k = 0; k < 2; k++) s = s.replace(reShort, '$1$2 ');
     return s.replace(/ (—|–)/g, ' $1').replace(/(\d) (?=[\dа-яё₽])/gi, '$1 ');
   };
-  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+  const walk = document.createTreeWalker(document.querySelector('.sp') || document.body, NodeFilter.SHOW_TEXT, {
     acceptNode: n => n.parentNode.closest('script, style') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
   const nodes = []; while (walk.nextNode()) nodes.push(walk.currentNode);
   nodes.forEach(n => { const v = fix(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; });
@@ -579,6 +579,11 @@
   // лента работ: дублируем для бесшовного круга
   const mq = document.getElementById('mq');
   mq.innerHTML += mq.innerHTML;
+  new IntersectionObserver((es, o) => {
+    if (!es[0].isIntersecting) return;
+    mq.querySelectorAll('img').forEach(i => { i.loading = 'eager'; });
+    o.disconnect();
+  }, { rootMargin: '1200px 0px' }).observe(mq);
 
   // композиции: большое фото меняется по урокам
   document.querySelectorAll('.comp').forEach(comp => {
