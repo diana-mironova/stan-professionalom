@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Веер — Стань профессионалом</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .hero { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; }
+  .nav { z-index: 160; }
+  .sky::after { content: ""; position: absolute; left: 50%; bottom: -38vw; width: 130vw; height: 90vw; transform: translateX(-50%); border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(186, 164, 240, .7), rgba(207, 192, 246, .38) 55%, rgba(214, 200, 246, 0)); }
+  .cols i:nth-child(1) { left: var(--gut); }
+  .cols i:nth-child(2) { left: calc(var(--gut) + (100% - var(--gut) * 2) / 3); }
+  .cols i:nth-child(3) { left: calc(var(--gut) + (100% - var(--gut) * 2) * 2 / 3); }
+  .cols i:nth-child(4) { right: var(--gut); }
+
+  .top { position: relative; z-index: 30; padding-top: clamp(26px, 5vh, 56px); }
+  .title { text-align: center; font-size: clamp(48px, 7.6vw, 122px); line-height: .95; }
+  .title .br { display: none; }
+  .row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 24px clamp(20px, 3vw, 48px);
+    margin-top: clamp(22px, 4vh, 40px); padding-top: clamp(18px, 3vh, 26px); border-top: 1px solid var(--line); }
+  .row .left .lead { font-size: clamp(16px, 1.3vw, 19px); }
+  .row .left .dirs { margin-top: 10px; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .row .left .dirs .star { display: none; }
+  .row .mid { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+  .row .mid .date { text-align: center; }
+  .row .right { display: flex; justify-content: flex-end; gap: 30px; }
+  .row .right .stat { flex-direction: column; gap: 6px; align-items: flex-end; text-align: right; }
+  .stat b { font-variant-numeric: lining-nums; }
+
+  .fan { position: relative; z-index: 20; flex: 1; min-height: var(--stageH, 440px); margin-top: clamp(10px, 2vh, 24px); }
+  .fan .card { --cw: 200px; left: calc(50% - var(--cw) / 2); top: 0; cursor: pointer;
+    transform-origin: 50% var(--P, 900px);
+    transform: rotate(calc(var(--k) * var(--ang, 11deg))) scale(var(--s, 1));
+    transition: transform 1.2s cubic-bezier(.6, 0, .2, 1), opacity 1.2s, box-shadow .6s; }
+  .fan .card.jump { transition: none; }
+  .fan .card.on { box-shadow: 0 46px 80px -40px rgba(52, 30, 100, .65), 0 14px 26px -16px rgba(52, 30, 100, .3); }
+  .fan-cap { position: absolute; left: 50%; transform: translateX(-50%); z-index: 200; width: max-content; max-width: 90vw; pointer-events: none; }
+
+  .cloud.c1 { --w: clamp(200px, 22vw, 340px); left: -6%; top: 30%; --o: .5; --b: 1.5px; z-index: 2; }
+  .cloud.c2 { --w: clamp(220px, 24vw, 380px); right: -6%; top: 24%; --o: .55; --b: 1px; z-index: 2; --t: 90s; }
+  .cloud.c3 { --w: clamp(260px, 34vw, 520px); left: -8%; bottom: -5%; z-index: 40; --o: .97; --t: 64s; }
+  .cloud.c4 { --w: clamp(260px, 32vw, 500px); right: -8%; bottom: -3%; z-index: 40; --o: .95; --t: 78s; --dx: -34px; }
+
+  @media (max-width: 979px) {
+    .row { grid-template-columns: minmax(0, 1fr) auto; }
+    .row .left { grid-column: 1; }
+    .row .mid { grid-column: 2; align-items: flex-end; }
+    .row .right { display: none; }
+    .cols i:nth-child(2), .cols i:nth-child(3) { display: none; }
+  }
+  @media (max-width: 699px) {
+    .title .br { display: inline; }
+    .title { font-size: clamp(48px, 12.8vw, 80px); }
+    .row { grid-template-columns: minmax(0, 1fr); text-align: center; border-top: 0; padding-top: 0; margin-top: 20px; }
+    .row .left .dirs { align-items: center; }
+    .row .mid { grid-column: 1; align-items: center; }
+    .cloud.c3 { bottom: -9%; --w: 62vw; left: -18%; }
+    .cloud.c4 { bottom: -8%; --w: 58vw; right: -18%; }
+  }
+</style>
+</head>
+<body>
+<section class="hero" id="hero">
+  <div class="sky">
+    <img class="cloud c1" src="img/puff1.png" alt="">
+    <img class="cloud c2" src="img/puff3.png" alt="">
+  </div>
+  <div class="cols"><div class="wrap"><i></i><i></i><i></i><i></i></div></div>
+
+  <header class="nav wrap">
+    <a class="logo" href="#"><img src="img/logo-plum.png" alt="Tretiakova School"></a>
+    <nav class="menu"><a href="#about">О группе</a><a href="#lessons">Уроки</a><a href="#price">Тарифы</a><a href="#faq">Вопросы</a></nav>
+    <a class="nav-btn" href="https://t.me/Trtiakova_School_bot">Присоединиться</a>
+  </header>
+
+  <div class="top wrap" id="top">
+    <h1 class="title"><span class="q">«</span>Стань <br class="br">профессионалом<span class="q">»</span></h1>
+    <div class="row">
+      <div class="left">
+        <p class="lead">Закрытая авторская группа Вероники Третьяковой</p>
+        <p class="dirs"><span>Лепка из мастики</span><svg class="star" viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Съедобная художественная роспись на&nbsp;мастике</span></p>
+      </div>
+      <div class="mid">
+        <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <p class="date">Старт продаж<b>29 октября 2026 года</b></p>
+      </div>
+      <div class="right">
+        <div class="stat"><b>13</b><span>уроков уже на&nbsp;старте</span></div>
+        <div class="stat"><b>5</b><span>тематических композиций</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fan" id="fan" aria-label="Работы: композиции курса"></div>
+  <p class="cap fan-cap" id="cap"></p>
+
+  <img class="cloud c3" src="img/puff2.png" alt="">
+  <img class="cloud c4" src="img/puff4.png" alt="">
+  <div class="grain"></div>
+</section>
+
+<script>
+(() => {
+  const DATA = [
+    ['jack-full', '«Капитан Джек Воробей»', '3 урока'],
+    ['tom', '«Том и Джерри»', '3 урока'],
+    ['lilo', '«Лило и Стич»', '2 урока'],
+    ['arab', '«Арабская ночь»', '3 урока по росписи'],
+    ['spider', '«Человек-паук»', '2 урока'],
+    ['jack-close', '«Капитан Джек Воробей»', '3 урока'],
+    ['jerry', '«Том и Джерри»', '3 урока'],
+    ['stitch', '«Лило и Стич»', '2 урока'],
+    ['jasmine', '«Арабская ночь»', '3 урока по росписи'],
+    ['spider-fig', '«Человек-паук»', '2 урока'],
+    ['genie', '«Арабская ночь»', '3 урока по росписи'],
+  ];
+  const N = DATA.length;
+  const hero = document.getElementById('hero');
+  const fan = document.getElementById('fan');
+  const cap = document.getElementById('cap');
+  let cur = 0, timer = null, lastW = 0, VIS = 4, prevK = [];
+
+  const cards = DATA.map(([f, t], i) => {
+    const el = document.createElement('figure');
+    el.className = 'card';
+    el.innerHTML = `<img src="img/${f}.jpg" alt="Торт ${t}" draggable="false">`;
+    el.addEventListener('click', () => { const k = slotOf(i); if (k) { go(k); play(); } });
+    fan.appendChild(el);
+    return el;
+  });
+
+  function slotOf(i) { let k = ((i - cur) % N + N) % N; if (k > N / 2) k -= N; return k; }
+
+  function measure() {
+    const W = hero.clientWidth, vh = window.innerHeight;
+    const small = W < 700;
+    const cw = small ? Math.min(W * .44, 190) : Math.max(150, Math.min(W * .14, 214));
+    const ch = cw * 4 / 3;
+    const ang = small ? 19 : 15;
+    VIS = small ? 2 : 3;
+    const P = ch * (small ? 2.7 : 3.3);
+    fan.style.setProperty('--ang', ang + 'deg');
+    cards.forEach(c => { c.style.setProperty('--cw', cw + 'px'); c.style.setProperty('--P', P + 'px'); });
+    const capH = 64;
+    const topB = document.getElementById('top').getBoundingClientRect().bottom - hero.getBoundingClientRect().top;
+    const stage = Math.max(ch + capH + ch * (small ? .34 : .3), vh - topB - 16);
+    fan.style.setProperty('--stageH', stage + 'px');
+    fan.style.minHeight = stage + 'px';
+    cap.style.top = (fan.offsetTop + ch + ch * (small ? .34 : .3)) + 'px';
+  }
+
+  function place(first) {
+    cards.forEach((el, i) => {
+      const k = slotOf(i);
+      const a = Math.abs(k);
+      const jumped = !first && prevK[i] !== undefined && Math.abs(prevK[i] - k) > 1;
+      el.classList.toggle('jump', jumped || !!first);
+      el.style.setProperty('--k', k);
+      el.style.setProperty('--s', (1 - a * .075).toFixed(3));
+      el.style.opacity = a > VIS ? 0 : a === VIS ? .45 : 1;
+      el.style.zIndex = String(50 - a);
+      el.style.pointerEvents = a > VIS ? 'none' : '';
+      el.style.setProperty('--mist', (a * .07).toFixed(2));
+      el.classList.toggle('on', k === 0);
+      prevK[i] = k;
+    });
+    if (first) requestAnimationFrame(() => requestAnimationFrame(() => cards.forEach(c => c.classList.remove('jump'))));
+    const d = DATA[((cur % N) + N) % N];
+    cap.style.opacity = 0;
+    setTimeout(() => { cap.innerHTML = `${d[1]}<small>${d[2]}</small>`; cap.style.opacity = 1; }, 360);
+  }
+
+  function go(dir) { cur += dir; place(false); }
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function play() { if (reduce) return; stop(); timer = setInterval(() => go(1), 3000); }
+  function stop() { clearInterval(timer); timer = null; }
+  fan.addEventListener('mouseenter', stop);
+  fan.addEventListener('mouseleave', play);
+
+  // свайп на телефоне
+  let sx = null;
+  fan.addEventListener('pointerdown', e => { sx = e.clientX; });
+  fan.addEventListener('pointerup', e => { if (sx === null) return; const dx = e.clientX - sx; sx = null; if (Math.abs(dx) > 40) { go(dx < 0 ? 1 : -1); play(); } });
+
+  new IntersectionObserver(es => { es[0].isIntersecting ? play() : stop(); }).observe(fan);
+  window.addEventListener('resize', () => { if (hero.clientWidth === lastW) return; lastW = hero.clientWidth; measure(); place(true); });
+  const start = () => { lastW = hero.clientWidth; measure(); place(true); play(); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else window.addEventListener('load', start);
+})();
+</script>
+</body>
+</html>

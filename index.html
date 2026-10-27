@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>«Стань профессионалом» — первый экран</title>
+<link rel="icon" href="v/img/logo-plum.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Раскладка: шапка с названием, три варианта блоками; на компьютере экран компьютера и телефона рядом, на телефоне переключатель */
+:root {
+  --bg: #FBF8FE; --card: #FFFFFF; --ink: #2B1E42; --muted: #6B5F82; --line: #E7E0F2; --accent: #5B41AD; --accent-soft: #EEE7FC; --stage: #F6F1FD;
+  --display: "Cormorant Garamond", Georgia, serif; --body: "Onest", system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.45 var(--body); }
+p, h1, h2 { margin: 0; }
+button { font: inherit; color: inherit; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.top { background: radial-gradient(60% 120% at 10% 0%, #FBE2EF 0%, rgba(251, 226, 239, 0) 70%), radial-gradient(50% 120% at 95% 10%, #E5DAFB 0%, rgba(229, 218, 251, 0) 70%); border-bottom: 1px solid var(--line); }
+.top .wrap { padding-top: max(28px, env(safe-area-inset-top, 0px)); padding-bottom: 30px; display: grid; gap: 14px; }
+.top img { width: 58px; }
+h1 { font: italic 500 clamp(38px, 6vw, 64px)/1 var(--display); text-wrap: balance; }
+.lead { max-width: 640px; color: var(--muted); font-size: 17px; text-wrap: pretty; }
+
+.list { display: grid; gap: 26px; padding-top: 30px; padding-bottom: 56px; }
+.v { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 22px; display: grid; gap: 16px; }
+.v-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.v-head .n { font: italic 500 22px/1 var(--display); color: var(--accent); }
+.v-head h2 { font: italic 500 38px/1 var(--display); }
+.v p { color: var(--muted); max-width: 760px; text-wrap: pretty; }
+
+.tabs { display: none; gap: 4px; padding: 4px; border-radius: 999px; background: var(--accent-soft); justify-self: start; }
+.tabs button { border: 0; background: transparent; padding: 10px 18px; border-radius: 999px; font-weight: 500; font-size: 15px; cursor: pointer; color: var(--muted); }
+.tabs button[aria-selected="true"] { background: var(--card); color: var(--ink); box-shadow: 0 2px 8px -4px rgba(43, 30, 66, .35); }
+
+.screens { display: grid; grid-template-columns: minmax(0, 1fr) 248px; gap: 20px; align-items: start; }
+.screen { margin: 0; min-width: 0; display: grid; gap: 10px; }
+.frame { position: relative; width: 100%; overflow: hidden; background: var(--stage); }
+.frame.desk { aspect-ratio: 1440 / 930; border-radius: 12px; border: 1px solid var(--line); }
+.frame.phone { width: 248px; max-width: 100%; aspect-ratio: 390 / 844; border-radius: 30px; border: 7px solid var(--ink); justify-self: center; }
+.frame iframe { position: absolute; left: 0; top: 0; border: 0; transform-origin: 0 0; background: var(--stage); }
+.desk iframe { width: 1440px; height: 930px; }
+.phone iframe { width: 390px; height: 844px; }
+.cap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; color: var(--muted); }
+.phone + .cap { justify-content: center; }
+.big { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 9px 16px; font-weight: 500; font-size: 14px; cursor: pointer; color: var(--accent); }
+.big:hover { background: var(--accent-soft); }
+a.big { text-decoration: none; }
+
+.end { padding-bottom: max(48px, env(safe-area-inset-bottom, 0px)); color: var(--muted); }
+
+/* во весь экран */
+.full { position: fixed; inset: 0; z-index: 50; background: #1E1630; display: flex; flex-direction: column;
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); }
+.full[hidden] { display: none; }
+.full-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; color: #F3EEFB; font-size: 15px; }
+.full-bar b { font: italic 500 24px/1 var(--display); }
+.full-bar button { border: 0; border-radius: 999px; padding: 10px 18px; background: #F3EEFB; color: var(--ink); font-weight: 500; cursor: pointer; }
+.full-stage { position: relative; flex: 1; min-height: 0; display: grid; place-items: center; }
+.full-frame { position: relative; overflow: hidden; border-radius: 10px; background: var(--stage); }
+.full-frame iframe { position: absolute; left: 0; top: 0; width: 1440px; height: 930px; border: 0; transform-origin: 0 0; }
+.full-hint { color: #CFC5E4; font-size: 14px; text-align: center; padding: 10px 16px 14px; }
+.full-hint[hidden] { display: none; }
+
+@media (max-height: 520px) {
+  .full-bar { position: absolute; top: max(8px, env(safe-area-inset-top, 0px)); right: max(8px, env(safe-area-inset-right, 0px)); z-index: 2; padding: 0; }
+  .full-bar b { display: none; }
+  .full-bar button { padding: 8px 14px; font-size: 14px; box-shadow: 0 4px 14px -4px rgba(0, 0, 0, .5); }
+}
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 899px) {
+  .v { padding: 16px; border-radius: 18px; }
+  .tabs { display: inline-flex; }
+  .screens { grid-template-columns: minmax(0, 1fr); }
+  .screen[data-view]:not(.on) { display: none; }
+  .frame.phone { width: min(310px, 100%); }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <img src="v/img/logo-plum.png" alt="Tretiakova School">
+    <h1>«Стань профессионалом»: первый экран</h1>
+    <p class="lead">Три варианта первого экрана сайта. Фото тортов стоят целиком, галерея в каждом варианте живая: крутится сама, её можно двигать пальцем или мышкой. Компьютерную версию можно открыть крупно кнопкой «Во&nbsp;весь&nbsp;экран».</p>
+  </div>
+</header>
+
+<main class="wrap list">
+  <section class="v" data-src="v/orbit.html" data-name="Орбита">
+    <div class="v-head"><span class="n">1</span><h2>Орбита</h2></div>
+    <p>Торты плывут по кругу вокруг названия: ближние крупные, дальние уходят за буквы и тают в облаках. Галерею можно потянуть пальцем или мышкой.</p>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-to="phone" aria-selected="true">Телефон</button><button type="button" role="tab" data-to="desk" aria-selected="false">Компьютер</button></div>
+    <div class="screens">
+      <figure class="screen" data-view="desk"><div class="frame desk"><iframe title="Орбита, версия для компьютера" data-w="1440"></iframe></div>
+        <figcaption class="cap">Компьютер <button type="button" class="big" data-full>Во весь экран</button></figcaption></figure>
+      <figure class="screen on" data-view="phone"><div class="frame phone"><iframe title="Орбита, версия для телефона" data-w="390"></iframe></div>
+        <figcaption class="cap">Телефон</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="v" data-src="v/wheel.html" data-name="Колесо">
+    <div class="v-head"><span class="n">2</span><h2>Колесо</h2></div>
+    <p>Слева название и кнопка, справа колесо из работ. Колесо поворачивается само, верхняя работа становится крупнее, в центре название композиции. Под колесом стрелки, чтобы листать.</p>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-to="phone" aria-selected="true">Телефон</button><button type="button" role="tab" data-to="desk" aria-selected="false">Компьютер</button></div>
+    <div class="screens">
+      <figure class="screen" data-view="desk"><div class="frame desk"><iframe title="Колесо, версия для компьютера" data-w="1440"></iframe></div>
+        <figcaption class="cap">Компьютер <button type="button" class="big" data-full>Во весь экран</button></figcaption></figure>
+      <figure class="screen on" data-view="phone"><div class="frame phone"><iframe title="Колесо, версия для телефона" data-w="390"></iframe></div>
+        <figcaption class="cap">Телефон</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="v" data-src="v/fan.html" data-name="Веер">
+    <div class="v-head"><span class="n">3</span><h2>Веер</h2></div>
+    <p>Название в одну строку, под ним веер из работ поднимается из облаков и сдвигается по кругу. Работу сбоку можно нажать, на телефоне веер листается пальцем.</p>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-to="phone" aria-selected="true">Телефон</button><button type="button" role="tab" data-to="desk" aria-selected="false">Компьютер</button></div>
+    <div class="screens">
+      <figure class="screen" data-view="desk"><div class="frame desk"><iframe title="Веер, версия для компьютера" data-w="1440"></iframe></div>
+        <figcaption class="cap">Компьютер <button type="button" class="big" data-full>Во весь экран</button></figcaption></figure>
+      <figure class="screen on" data-view="phone"><div class="frame phone"><iframe title="Веер, версия для телефона" data-w="390"></iframe></div>
+        <figcaption class="cap">Телефон</figcaption></figure>
+    </div>
+  </section>
+
+  <p class="end">Тексты на экранах взяты из текста сайта, кнопка «Присоединиться» ведёт в бота.</p>
+</main>
+
+<div class="full" id="full" hidden>
+  <div class="full-bar"><b id="fullName"></b><button type="button" id="fullClose">Закрыть</button></div>
+  <div class="full-stage" id="fullStage"><div class="full-frame" id="fullFrame"><iframe id="fullIfr" title="Версия для компьютера во весь экран"></iframe></div></div>
+  <p class="full-hint" id="fullHint">Поверните телефон боком, так экран будет крупнее</p>
+</div>
+
+<script>
+(() => {
+  const sections = [...document.querySelectorAll('.v')];
+
+  function fit() {
+    document.querySelectorAll('.frame').forEach(f => {
+      const ifr = f.querySelector('iframe');
+      if (!f.clientWidth) return;
+      ifr.style.transform = 'scale(' + (f.clientWidth / Number(ifr.dataset.w)) + ')';
+    });
+    if (!full.hidden) fitFull();
+  }
+
+  // экраны грузятся, когда блок близко к экрану: так страница не тормозит на телефоне
+  function load(sec) {
+    sec.querySelectorAll('.frame iframe').forEach(ifr => {
+      const fig = ifr.closest('.screen');
+      const visible = getComputedStyle(fig).display !== 'none';
+      if (visible && !ifr.src) ifr.src = sec.dataset.src;
+    });
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.dataset.near = '1'; load(e.target); fit(); } }), { rootMargin: '300px 0px' });
+  sections.forEach(s => io.observe(s));
+
+  sections.forEach(sec => {
+    sec.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+      sec.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      sec.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.dataset.view === b.dataset.to));
+      load(sec); fit();
+    }));
+    sec.querySelector('[data-full]').addEventListener('click', () => openFull(sec));
+  });
+
+  const full = document.getElementById('full');
+  const fullIfr = document.getElementById('fullIfr');
+  const fullFrame = document.getElementById('fullFrame');
+  const fullStage = document.getElementById('fullStage');
+  const fullHint = document.getElementById('fullHint');
+  function fitFull() {
+    const W = fullStage.clientWidth - 16, H = fullStage.clientHeight - 16;
+    const s = Math.min(W / 1440, H / 930);
+    fullFrame.style.width = (1440 * s) + 'px';
+    fullFrame.style.height = (930 * s) + 'px';
+    fullIfr.style.transform = 'scale(' + s + ')';
+    fullHint.hidden = !(window.innerWidth < 700 && window.innerHeight > window.innerWidth);
+  }
+  function openFull(sec) {
+    document.getElementById('fullName').textContent = sec.dataset.name;
+    fullIfr.src = sec.dataset.src;
+    full.hidden = false;
+    document.body.style.overflow = 'hidden';
+    fitFull();
+  }
+  function closeFull() {
+    full.hidden = true;
+    fullIfr.removeAttribute('src');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('fullClose').addEventListener('click', closeFull);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !full.hidden) closeFull(); });
+
+  window.addEventListener('resize', () => { sections.forEach(s => { if (s.dataset.near) load(s); }); fit(); });
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(document.body);
+  fit();
+})();
+</script>
+</body>
+</html>

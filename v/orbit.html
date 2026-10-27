@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Орбита — Стань профессионалом</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .hero { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; }
+  .nav { z-index: 160; }
+  .cols i:nth-child(1) { left: var(--gut); }
+  .cols i:nth-child(2) { left: calc(var(--gut) + (100% - var(--gut) * 2) * .25); }
+  .cols i:nth-child(3) { left: calc(var(--gut) + (100% - var(--gut) * 2) * .75); }
+  .cols i:nth-child(4) { right: var(--gut); }
+
+  .head { position: relative; z-index: 150; display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding-top: clamp(30px, 5.5vh, 64px); pointer-events: none; }
+  .head a, .head .btn { pointer-events: auto; }
+  .title { position: relative; }
+  .title .l2 { position: relative; display: inline-block; }
+  .swash { position: absolute; left: 4%; right: 2%; bottom: -.16em; width: 94%; height: .22em; overflow: visible; }
+  .swash path { fill: none; stroke: var(--lilac); stroke-width: 2.2; stroke-linecap: round; vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s .5s cubic-bezier(.6, 0, .2, 1) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .lead { margin-top: clamp(26px, 3.4vh, 38px); max-width: 30ch; }
+  .dirs { margin-top: 12px; justify-content: center; }
+  .cta-row { margin-top: clamp(24px, 3.4vh, 34px); justify-content: center; }
+  .date { text-align: left; }
+
+  .stats { display: none; }
+  @media (min-width: 1180px) {
+    .stats { position: absolute; left: var(--gut); right: var(--gut); top: clamp(120px, 21vh, 190px); display: flex; justify-content: space-between; z-index: 150; pointer-events: none; }
+    .stat { flex-direction: column; gap: 10px; max-width: 150px; }
+    .stats .stat:last-child { align-items: flex-end; text-align: right; }
+  }
+
+  .ring { position: absolute; inset: 0; touch-action: pan-y; cursor: grab; }
+  .ring.drag { cursor: grabbing; }
+  .ring .card { --cw: 200px; }
+  .orbit-cap { position: absolute; left: 50%; z-index: 170; transform: translateX(-50%); width: max-content; max-width: 90vw; pointer-events: none; }
+
+  .cloud.c1 { --w: clamp(220px, 26vw, 380px); left: -4%; top: 13%; --o: .55; --b: 1.5px; z-index: 2; --dx: 30px; }
+  .cloud.c2 { --w: clamp(240px, 30vw, 440px); right: -6%; top: 18%; --o: .7; --b: .5px; z-index: 2; --t: 85s; }
+  .cloud.c3 { --w: clamp(230px, 32vw, 470px); left: -7%; bottom: -2%; z-index: 140; --o: .96; --t: 60s; }
+  .cloud.c4 { --w: clamp(220px, 30vw, 440px); right: -7%; bottom: 3%; z-index: 140; --o: .92; --t: 75s; --dx: -36px; }
+
+  .title { font-size: clamp(48px, 8vw, 124px); }
+  .stat b { font-variant-numeric: lining-nums; }
+  @media (max-width: 899px) {
+    .title { font-size: clamp(48px, 12.6vw, 92px); }
+    .cloud.c1 { top: 22%; }
+  }
+  @media (max-width: 599px) {
+    .dirs { flex-direction: column; gap: 4px; }
+    .dirs .star { display: none; }
+    .lead { margin-top: 22px; }
+    .cta-row { flex-direction: column; gap: 14px; margin-top: 24px; }
+    .date { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<section class="hero" id="hero">
+  <div class="sky">
+    <img class="cloud c1" src="img/puff1.png" alt="">
+    <img class="cloud c2" src="img/puff3.png" alt="">
+  </div>
+  <div class="cols"><div class="wrap"><i></i><i></i><i></i><i></i></div></div>
+
+  <header class="nav wrap">
+    <a class="logo" href="#"><img src="img/logo-plum.png" alt="Tretiakova School"></a>
+    <nav class="menu"><a href="#about">О группе</a><a href="#lessons">Уроки</a><a href="#price">Тарифы</a><a href="#faq">Вопросы</a></nav>
+    <a class="nav-btn" href="https://t.me/Trtiakova_School_bot">Присоединиться</a>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>13</b><span>уроков уже на&nbsp;старте</span></div>
+    <div class="stat"><b>5</b><span>тематических композиций</span></div>
+  </div>
+
+  <div class="head wrap">
+    <h1 class="title" id="title"><span class="q">«</span>Стань<br><span class="l2">профессионалом<svg class="swash" viewBox="0 0 600 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 90 6, 170 4, 250 10 S 420 22, 520 11 S 585 7, 596 9"/></svg></span><span class="q">»</span></h1>
+    <p class="lead">Закрытая авторская группа Вероники Третьяковой</p>
+    <p class="dirs"><span>Лепка из мастики</span><svg class="star" viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Съедобная художественная роспись на&nbsp;мастике</span></p>
+    <div class="cta-row">
+      <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <p class="date">Старт продаж<b>29 октября 2026 года</b></p>
+    </div>
+  </div>
+
+  <div class="ring" id="ring" aria-label="Работы учениц и автора: композиции курса"></div>
+  <p class="cap orbit-cap" id="cap"></p>
+
+  <img class="cloud c3" src="img/puff2.png" alt="">
+  <img class="cloud c4" src="img/puff4.png" alt="">
+  <div class="grain"></div>
+</section>
+
+<script>
+(() => {
+  const DATA = [
+    ['jack-full', '«Капитан Джек Воробей»', '3 урока'],
+    ['lilo', '«Лило и Стич»', '2 урока'],
+    ['arab', '«Арабская ночь»', '3 урока по росписи'],
+    ['tom', '«Том и Джерри»', '3 урока'],
+    ['spider', '«Человек-паук»', '2 урока'],
+    ['jasmine', '«Арабская ночь»', '3 урока по росписи'],
+    ['stitch', '«Лило и Стич»', '2 урока'],
+    ['jack-close', '«Капитан Джек Воробей»', '3 урока'],
+    ['jerry', '«Том и Джерри»', '3 урока'],
+    ['spider-fig', '«Человек-паук»', '2 урока'],
+    ['genie', '«Арабская ночь»', '3 урока по росписи'],
+  ];
+  const hero = document.getElementById('hero');
+  const ring = document.getElementById('ring');
+  const cap = document.getElementById('cap');
+  const title = document.getElementById('title');
+  const head = document.querySelector('.head');
+  const ALL = DATA.map((_, i) => i);
+  const PHONE = [0, 1, 2, 3, 9, 5, 6, 8]; // на телефоне 8 карточек, иначе они ложатся стопкой
+  let act = ALL, N = ALL.length, STEP = Math.PI * 2 / N;
+
+  const cards = DATA.map(([f, t]) => {
+    const el = document.createElement('figure');
+    el.className = 'card';
+    el.innerHTML = `<img src="img/${f}.jpg" alt="Торт ${t}" draggable="false" loading="eager">`;
+    ring.appendChild(el);
+    return el;
+  });
+
+  let W, H, cw, ch, cx, cy, rx, ry, small = false;
+  function measure() {
+    hero.style.minHeight = '';
+    W = hero.clientWidth;
+    const vh = window.innerHeight;
+    small = W < 600;
+    act = small ? PHONE : ALL; N = act.length; STEP = Math.PI * 2 / N;
+    cards.forEach((c, i) => { c.style.display = act.includes(i) ? '' : 'none'; });
+    front = -1;
+    cw = small ? Math.min(W * .37, 170) : Math.max(130, Math.min(W * .128, 190));
+    ch = cw * 4 / 3;
+    const capH = small ? 58 : 66;
+    const hr = hero.getBoundingClientRect();
+    const tr = title.getBoundingClientRect();
+    const ctaB = head.getBoundingClientRect().bottom - hr.top;
+    const backY = W >= 900 ? (tr.bottom - hr.top) - tr.height * .28 : ctaB + ch * (small ? .02 : .08);
+    // карточки у переднего края не должны заходить на кнопку и дату
+    let minRy = (ctaB + 16 + .475 * ch - backY) / 1.819;
+    minRy = Math.max(minRy, ch * (small ? .5 : .45));
+    const need = backY + minRy * 2 + ch / 2 + capH + 8;
+    H = Math.max(vh, need, hero.clientHeight);
+    hero.style.minHeight = H + 'px';
+    const frontY = H - capH - ch / 2 - 8;
+    cy = (backY + frontY) / 2;
+    ry = (frontY - backY) / 2;
+    cx = W / 2;
+    rx = small ? W * .47 : Math.min(W * .45, 700);
+    cards.forEach(c => c.style.setProperty('--cw', cw + 'px'));
+    cap.style.top = (frontY + ch / 2 + 14) + 'px';
+  }
+
+  let angle = 0, vel = 0, drag = false, lastX = 0, lastT = 0, front = -1, visible = true;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const AUTO = reduce ? 0 : (Math.PI * 2) / 72000; // полный круг за 72 секунды
+
+  function place() {
+    let best = -2, bi = 0;
+    for (let k = 0; k < N; k++) {
+      const i = act[k];
+      const th = angle + k * STEP;
+      const s = Math.sin(th), c = Math.cos(th);
+      const d = (c + 1) / 2;
+      const sc = small ? .36 + .64 * d * d : .42 + .58 * d;
+      const x = cx + rx * s - cw / 2, y = cy + ry * c - ch / 2;
+      const el = cards[i];
+      el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${sc.toFixed(3)})`;
+      el.style.zIndex = String(1 + Math.round(d * 99));
+      el.style.opacity = Math.min(1, .1 + d * 1.85).toFixed(3);
+      el.style.setProperty('--mist', Math.max(0, .5 - d * 1.05).toFixed(3));
+      if (c > best) { best = c; bi = i; }
+    }
+    if (bi !== front) {
+      front = bi;
+      cap.style.opacity = 0;
+      setTimeout(() => {
+        cap.innerHTML = `${DATA[bi][1]}<small>${DATA[bi][2]}</small>`;
+        cap.style.opacity = 1;
+      }, 220);
+    }
+  }
+
+  let prev = performance.now();
+  function tick(now) {
+    const dt = Math.min(48, now - prev); prev = now;
+    if (!drag && visible) {
+      angle -= (AUTO + vel) * dt;
+      vel *= Math.pow(.94, dt / 16);
+      if (Math.abs(vel) < 1e-6) vel = 0;
+    }
+    place();
+    requestAnimationFrame(tick);
+  }
+
+  ring.addEventListener('pointerdown', e => {
+    drag = true; vel = 0; lastX = e.clientX; lastT = performance.now();
+    ring.classList.add('drag'); ring.setPointerCapture(e.pointerId);
+  });
+  ring.addEventListener('pointermove', e => {
+    if (!drag) return;
+    const now = performance.now(), dx = e.clientX - lastX;
+    const da = dx / rx * .9;
+    angle += da;
+    vel = -da / Math.max(8, now - lastT);
+    lastX = e.clientX; lastT = now;
+  });
+  const end = () => { drag = false; ring.classList.remove('drag'); };
+  ring.addEventListener('pointerup', end);
+  ring.addEventListener('pointercancel', end);
+
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(hero);
+  let lastW = 0;
+  window.addEventListener('resize', () => { if (hero.clientWidth === lastW) return; lastW = hero.clientWidth; measure(); place(); });
+  const start = () => { lastW = hero.clientWidth; measure(); place(); requestAnimationFrame(t => { prev = t; tick(t); }); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else window.addEventListener('load', start);
+})();
+</script>
+</body>
+</html>
