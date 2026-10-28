@@ -1100,3 +1100,29 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 #about .ab-c1 .ab-say { margin-top: 22px; }
 #about .ab-tiles b { font-weight: 600; color: #fff; }
 
+/* =====================================================================
+   3. Что внутри, 28.10 вечером: шрифты как в блоках 1–2 (Bebas, рукописный, основной), картинки крупнее,
+   без светлой обводки у фото, текст крупнее и белее
+   ===================================================================== */
+#inside .h2 em { display: inline-block; font: 400 1.2em/1 var(--script); letter-spacing: 0; text-transform: none; padding: .1em .24em .3em .16em; margin: -.1em 0 -.3em -.06em;
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#inside .fcard h3 { font: 400 clamp(28px, 2.3vw, 34px)/1 var(--bebas); text-transform: uppercase; letter-spacing: .01em; color: #F6F2FC; }
+#inside .fcard h3 .n { color: var(--lilac-light); }
+#inside .fcard p { margin-top: 14px; font-size: 17px; line-height: 1.45; color: #E4DEEC; }
+#inside .fv { height: 270px; }
+#inside .v-fan .arch { width: 116px; margin-left: -58px; bottom: 44px; transform-origin: 50% 200%; box-shadow: 0 18px 30px -14px rgba(0, 0, 0, .65); }
+#inside .v-months .ell { left: 7%; right: 7%; top: 9%; bottom: 9%; border-color: rgba(196, 179, 255, .3); }
+#inside .v-months .cyc { width: 124px; margin: -83px 0 0 -62px; box-shadow: 0 18px 30px -14px rgba(0, 0, 0, .65); }
+#inside .v-two figure { width: 140px; }
+#inside .v-two .arch { box-shadow: 0 18px 30px -14px rgba(0, 0, 0, .65); }
+#inside .v-two figcaption { margin-top: 8px; font: 400 30px/1 var(--script); color: var(--lilac-light); }
+#inside .note { font-size: 16.5px; color: #F1ECF8; }
+@media (max-width: 1179px) and (min-width: 700px) { #inside .fv { height: 240px; } }
+@media (max-width: 699px) {
+  #inside .fv { height: 230px; }
+  #inside .v-fan .arch { width: 100px; margin-left: -50px; }
+  #inside .v-months .cyc { width: 110px; margin: -73px 0 0 -55px; }
+  #inside .v-two figure { width: 124px; }
+  #inside .fcard p { font-size: 16.5px; }
+}
+
