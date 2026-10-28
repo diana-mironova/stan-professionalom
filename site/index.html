@@ -7,7 +7,7 @@
 <title>«Стань профессионалом» — закрытая группа по лепке и росписи 2.0 Третьяковой Вероники</title>
 <meta name="description" content="Закрытая группа по лепке и росписи 2.0 Третьяковой Вероники. Лепка из мастики и съедобная художественная роспись на мастике. Старт продаж — 29 октября 2026 года.">
 <script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="site.css?v=28-10-blok5">
+<link rel="stylesheet" href="site.css?v=29-10-blok6-approved">
 </head>
 <body>
 
@@ -315,14 +315,14 @@
 
 <!-- 6. Новый уровень -->
 <section class="sec level" id="level">
-  <img class="cloud v1" src="img/puff1.png" alt="" loading="lazy">
-  <img class="cloud v2" src="img/puff4.png" alt="" loading="lazy">
+  
+  
   <div class="wrap level-grid">
     <div class="level-text">
-      <h2 class="h2 rv">Твой новый уровень <span class="l2">начинается здесь<svg class="swash" id="swash2" viewBox="0 0 600 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 13 C 110 5, 200 6, 300 11 S 470 19, 596 8"/></svg></span></h2>
+      <h2 class="h2 rv">Твой новый уровень<br><span class="l2">начинается здесь</span></h2>
       <div class="lvl-cards">
-        <div class="lvl-card rv"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c.6 5.2 2 6.6 7.2 7.2-5.2.6-6.6 2-7.2 7.2-.6-5.2-2-6.6-7.2-7.2C10 9.6 11.4 8.2 12 3Z"/><path d="M18.5 16.5c.2 1.6.8 2.2 2.4 2.4-1.6.2-2.2.8-2.4 2.4-.2-1.6-.8-2.2-2.4-2.4 1.6-.2 2.2-.8 2.4-2.4Z"/></svg></span><p>Представь, сколько <mark>новых техник</mark> ты сможешь освоить, сколько интересных работ создать и насколько увереннее станешь в своём мастерстве.</p></div>
-        <div class="lvl-card lvl-card--2 rv" style="--d:.12s"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 20h5v-5h5v-5h5V5h2"/><path d="M16 3.5h4.5V8"/></svg></span><p>Шаг за шагом ты сможешь развивать свой подход к кондитерскому декору, экспериментировать с формой и цветом и создавать <mark>работы, которыми хочется гордиться</mark>.</p></div>
+        <div class="lvl-card rv"><span class="lvl-star" aria-hidden="true">✦</span><p>Представь, сколько <b>новых техник</b> ты сможешь освоить, сколько интересных работ создать и насколько увереннее станешь в своём мастерстве.</p></div>
+        <div class="lvl-card lvl-card--2 rv" style="--d:.12s"><span class="lvl-star" aria-hidden="true">✦</span><p>Шаг за шагом ты сможешь развивать свой подход к кондитерскому декору, экспериментировать с формой и цветом и создавать <b>работы, которыми хочется гордиться</b>.</p></div>
       </div>
     </div>
     <div class="stairs rv" style="--d:.15s" aria-hidden="true">
@@ -703,7 +703,7 @@
 
   // росчерк под «начинается здесь»
   const sw = document.getElementById('swash2');
-  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { sw.classList.add('go'); o.disconnect(); } }, { threshold: 1 }).observe(sw);
+  if (sw) new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { sw.classList.add('go'); o.disconnect(); } }, { threshold: 1 }).observe(sw);
 
   // липкая шапка
   const bar = document.getElementById('bar');

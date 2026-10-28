@@ -1416,3 +1416,24 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
   #launch .lhot { padding: 20px 20px 22px; font-size: 16px; }
 }
 
+
+/* 6. Твой новый уровень — согласование, круг 1. */
+#level { background: radial-gradient(ellipse at 82% 42%,rgba(139,105,214,.10),transparent 58%),#302d35; padding-block: clamp(48px,6vw,90px); }
+#level .level-grid { grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: clamp(28px,4vw,64px); align-items:center; }
+#level .h2 { font-family:var(--bebas); font-size:clamp(46px,4.8vw,70px); line-height:1; text-transform:uppercase; letter-spacing:0; }
+#level .h2 .l2 { font:400 1.1em/1.1 var(--script); text-transform:none; position:relative; top:-.48em; padding:.08em .24em .18em .12em; margin:0 -.24em -.38em -.12em; white-space:nowrap; background:linear-gradient(90deg,#D9CCFF,#C9B2FF 45%,#F1B6DA); background-clip:text; -webkit-background-clip:text; color:transparent; }
+#level .lvl-cards { gap:16px; margin-top:24px; }
+#level .lvl-card { grid-template-columns:14px minmax(0,1fr); gap:14px; padding:23px 24px; border-radius:22px; background:rgba(255,255,255,.065); border:1px solid rgba(227,212,255,.12); box-shadow:none; }
+#level .lvl-card--2 { margin-left:0; background:linear-gradient(120deg,rgba(135,97,218,.29),rgba(135,97,218,.09)); }
+#level .lvl-star { color:#cbb3ff; font-size:17px; line-height:1.6; }
+#level .lvl-card p, #level .lvl-card:first-child p { padding:0; font:400 clamp(16px,1.28vw,18px)/1.5 var(--sans); color:#ede7f4; }
+#level b { font-weight:600; color:#fff; }
+#level .stairs { max-width:560px; }
+#level .st .arch { border-radius:18px; box-shadow:0 22px 30px -16px rgba(0,0,0,.5); }
+#level .st .arch::after { display:none; }
+#level .mq { margin-top:48px; }
+#level .mq .arch { width:clamp(120px,12vw,172px); border-radius:16px; box-shadow:none; }
+@media(max-width:1023px) { #level .level-grid { grid-template-columns:1fr; gap:30px; } #level .stairs { max-width:540px; } #level .level-text { max-width:720px; width:100%; margin:auto; } }
+@media(max-width:599px) { #level { padding-block:44px; } #level .h2 { font-size:clamp(36px,8.5vw,50px); } #level .h2 .l2 { font-size:1.2em; } #level .lvl-cards { margin-top:18px; gap:12px; } #level .lvl-card { padding:18px; gap:10px; grid-template-columns:12px minmax(0,1fr); border-radius:18px; } #level .lvl-card p,#level .lvl-card:first-child p { font-size:16px; } #level .st .arch { border-radius:10px; } #level .mq { margin-top:24px; } #level .mq .arch { width:114px; } }
+
+#level .arch::after { display:none; }
