@@ -728,26 +728,26 @@ mark { color: var(--ink); font-weight: 500; padding: 0 .08em; -webkit-box-decora
    без белых фонов и подложек, облака только внизу первого экрана
    ===================================================================== */
 :root {
-  --bg: #1F1A28;
-  --bg-2: #27212F;
+  --bg: #2F2C33;
+  --bg-2: #3A363E;
   --ink: #F5F0FC;
   --ink-2: rgba(234, 226, 246, .8);
-  --muted: rgba(214, 203, 235, .62);
+  --muted: rgba(222, 214, 238, .7);
   --lilac: #A58EF2;
   --lilac-deep: #6B4FCB;
   --lilac-light: #C4B3FF;
   --lilac-soft: rgba(255, 255, 255, .1);
   --pink: #F0A9D3;
   --line: rgba(255, 255, 255, .08);
-  --card: linear-gradient(160deg, #302A3C 0%, #29233A 100%);
-  --card-line: rgba(255, 255, 255, .07);
+  --card: linear-gradient(160deg, #4A4650 0%, #423E48 100%);
+  --card-line: rgba(255, 255, 255, .08);
   --card-shadow: 0 30px 60px -40px rgba(0, 0, 0, .7);
   --ring: 0 0 0 2px rgba(196, 179, 255, .5);
 }
 body { background: var(--bg); }
 
 /* кавычки висят за краем строки: «Стань» и «профессионалом» стоят ровно по центру */
-.hero .title > .q:first-child { margin-left: -.41em; }
+.hero .title > .q:first-child { margin-left: -.367em; }
 .hero .title > .q:last-child { margin-right: -.41em; }
 .hero .title { white-space: nowrap; }
 
@@ -757,22 +757,22 @@ body { background: var(--bg); }
 .sky { background:
     radial-gradient(55% 45% at 6% 4%, rgba(214, 140, 190, .2) 0%, rgba(214, 140, 190, 0) 70%),
     radial-gradient(50% 42% at 96% 12%, rgba(150, 118, 240, .3) 0%, rgba(150, 118, 240, 0) 72%),
-    radial-gradient(80% 55% at 50% 108%, rgba(122, 95, 208, .42) 0%, rgba(122, 95, 208, 0) 70%),
-    linear-gradient(180deg, #1B1623 0%, #211A2C 55%, #281F3B 100%); }
+    radial-gradient(70% 45% at 50% 82%, rgba(122, 95, 208, .34) 0%, rgba(122, 95, 208, 0) 70%),
+    linear-gradient(180deg, #2A272E 0%, #302C35 60%, var(--bg) 100%); }
 .grain { mix-blend-mode: overlay; opacity: .08; }
 
 .nav-btn { color: var(--ink); border-color: rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .05); }
 .nav-btn:hover { background: var(--lilac-deep); border-color: var(--lilac-deep); color: #fff; }
-.bar { background: rgba(31, 26, 40, .84); }
+.bar { background: rgba(47, 44, 51, .88); }
 .btn { box-shadow: 0 18px 40px -16px rgba(107, 79, 203, .8), inset 0 1px 0 rgba(255, 255, 255, .22); }
 .btn:hover { background: #7A5FD8; }
 .btn--light { background: #EDE6FF; color: #1F1A28; }
 .btn--light:hover { background: #F6F2FF; }
 
 /* фото: прямоугольники со скруглёнными углами вместо арок (Диана, 28.10) */
-.card, .arch { background: #2E2839; border-radius: 7% / 5.25%; }
+.card, .arch { background: #3E3A43; border-radius: 7% / 5.25%; }
 .card { box-shadow: 0 34px 60px -30px rgba(0, 0, 0, .75), 0 10px 22px -14px rgba(0, 0, 0, .5); }
-.card::before { background: linear-gradient(180deg, #211A2C, #261E35); }
+.card::before { background: linear-gradient(180deg, #2C2930, #312D36); }
 .card::after, .arch::after { border-color: rgba(255, 255, 255, .5); }
 .arch { box-shadow: 0 34px 60px -30px rgba(0, 0, 0, .7), 0 10px 22px -14px rgba(0, 0, 0, .45); }
 
@@ -790,14 +790,14 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 .goal { background:
     radial-gradient(60% 80% at 0% 100%, rgba(214, 140, 190, .18) 0%, rgba(214, 140, 190, 0) 70%),
     radial-gradient(60% 90% at 100% 0%, rgba(150, 118, 240, .38) 0%, rgba(150, 118, 240, 0) 70%),
-    linear-gradient(120deg, #2B2338 0%, #34294B 100%);
+    linear-gradient(120deg, #423D48 0%, #483E58 100%);
   box-shadow: 0 40px 80px -50px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(255, 255, 255, .07); }
 .goal-arch { box-shadow: 0 0 0 7px rgba(255, 255, 255, .07), 0 40px 60px -30px rgba(0, 0, 0, .7); }
 .goal mark { color: var(--lilac-light); }
 
 /* 3. Что внутри */
-.inside { background: linear-gradient(180deg, var(--bg-2) 0%, #241E2D 100%); }
-.fv { background: radial-gradient(70% 80% at 50% 100%, rgba(150, 118, 240, .38) 0%, rgba(150, 118, 240, 0) 70%), linear-gradient(180deg, #2A2436, #221C2C); }
+.inside { background: linear-gradient(180deg, var(--bg-2) 0%, #34303A 100%); }
+.fv { background: radial-gradient(70% 80% at 50% 100%, rgba(150, 118, 240, .38) 0%, rgba(150, 118, 240, 0) 70%), linear-gradient(180deg, #3D3943, #35313B); }
 .v-fan .arch, .v-months .cyc, .v-two .arch { box-shadow: var(--ring), 0 16px 26px -12px rgba(0, 0, 0, .7); }
 .v-months .ell { border-color: rgba(196, 179, 255, .3); }
 .v-months i { background: #4A3F66; animation-name: mon-d; }
@@ -820,9 +820,9 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 
 /* 5. Запуски */
 .launch { background: radial-gradient(45% 50% at 95% 30%, rgba(214, 140, 190, .1) 0%, rgba(214, 140, 190, 0) 70%), var(--bg); }
-.lcard--2 { background: linear-gradient(160deg, #2F2A42 0%, #29233C 100%); }
+.lcard--2 { background: linear-gradient(160deg, #4A4556 0%, #433E4E 100%); }
 .big-date small { color: rgba(196, 179, 255, .6); }
-.pts li { background: rgba(255, 255, 255, .045); border-color: rgba(255, 255, 255, .06); }
+.pts li { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .07); }
 .pts .pt-hot { background: linear-gradient(150deg, #5B41AD 0%, #3E2B7A 100%); border-color: transparent; box-shadow: 0 24px 40px -24px rgba(0, 0, 0, .7); }
 .terms span { border-color: rgba(196, 179, 255, .35); background: rgba(255, 255, 255, .04); }
 .terms b { color: var(--lilac-light); }
@@ -832,7 +832,7 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 .level { background:
     radial-gradient(50% 60% at 12% 18%, rgba(214, 140, 190, .12) 0%, rgba(214, 140, 190, 0) 70%),
     radial-gradient(50% 60% at 92% 30%, rgba(150, 118, 240, .2) 0%, rgba(150, 118, 240, 0) 70%),
-    linear-gradient(180deg, var(--bg-2) 0%, #241E2D 100%); }
+    linear-gradient(180deg, var(--bg-2) 0%, #34303A 100%); }
 .st-steps { filter: drop-shadow(0 26px 34px rgba(0, 0, 0, .45)); }
 .st .arch { box-shadow: var(--ring), 0 22px 30px -16px rgba(0, 0, 0, .7); }
 .spark { fill: var(--lilac-light); }
@@ -880,7 +880,7 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 .sv-row--y em { color: var(--lilac-light); }
 
 /* 8. Вопросы */
-.faq { background: linear-gradient(180deg, var(--bg-2) 0%, #241E2D 100%); }
+.faq { background: linear-gradient(180deg, var(--bg-2) 0%, #34303A 100%); }
 .qa { border-top-color: rgba(255, 255, 255, .12); }
 .qa:last-child { border-bottom-color: rgba(255, 255, 255, .12); }
 .qa summary:hover .qa-q { color: var(--lilac-light); }
@@ -889,9 +889,21 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 /* 9. Подвал */
 .foot { background: radial-gradient(50% 50% at 90% 0%, rgba(122, 95, 208, .32) 0%, rgba(122, 95, 208, 0) 70%),
     radial-gradient(40% 40% at 0% 100%, rgba(216, 132, 196, .12) 0%, rgba(216, 132, 196, 0) 70%),
-    linear-gradient(180deg, #19141F 0%, #120E18 100%);
+    linear-gradient(180deg, #262329 0%, #1D1B20 100%);
   box-shadow: 0 -1px 0 rgba(255, 255, 255, .06); }
 
 @media (max-width: 599px) {
   .lessons { padding-bottom: 64px; }
 }
+
+/* заголовки: Bebas Neue Cyrillic заглавными, акцентные слова курсивом Cormorant (Диана, 28.10, по образцу сайта Вероники) */
+@font-face { font-family: "Bebas Neue Cyrillic"; src: url("fonts/bebas-neue-cyrillic.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+:root { --bebas: "Bebas Neue Cyrillic", "Bebas Neue", "Oswald", Impact, sans-serif; }
+.title, .h2, .foot-title { font-family: var(--bebas); font-style: normal; font-weight: 400; text-transform: uppercase; letter-spacing: .012em; line-height: .94; }
+.h2 em, .h2 .l2, .foot-title em, .title .l2, .title > .q:last-child {
+  font-family: var(--serif); font-style: italic; font-weight: 500; text-transform: none; letter-spacing: -.01em; color: var(--lilac-light); }
+.h2 em, .h2 .l2, .foot-title em { font-size: 1.12em; line-height: .9; }
+.lessons .h2 em .n { color: inherit; }
+.hero .title { font-size: clamp(48px, min(7vw, 10.5vh), 112px); }
+@media (max-width: 899px) { .hero .title { font-size: clamp(48px, 12.6vw, 92px); } }
+@media (max-width: 599px) { .foot-title { font-size: clamp(40px, 12vw, 64px); } }
