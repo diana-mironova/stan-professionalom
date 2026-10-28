@@ -999,3 +999,104 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
   .hv-facts p + p { margin-left: 18px; padding-left: 18px; }
   .hv-facts b { font-size: 52px; }
 }
+
+/* =====================================================================
+   2. О группе, 28.10 вечером: те же шрифты, что на первом экране (Bebas, рукописный Great Vibes, основной),
+   без значков в кружках, текст белее и крупнее, одно фото Вероники
+   ===================================================================== */
+#about .h2 em { display: inline-block; font: 400 1.16em/1 var(--script); letter-spacing: 0; text-transform: none;
+  padding: .1em .24em .16em .2em; margin: -.72em 0 -.14em -.12em; position: relative; z-index: 1;
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#about .lead-big { color: #F1ECF8; }
+#about .ab-card .ico { display: none; }
+#about .ab-card { padding: 30px 32px 32px; }
+#about .ab-card p { font-size: 18px; line-height: 1.45; color: #E4DEEC; }
+#about .ab-card strong { color: #fff; }
+#about .ab-c3 p { color: #F3EEFB; }
+#about .about-small { display: none; }
+#about .about-cap { margin-top: 16px; font: 400 clamp(34px, 2.8vw, 42px)/1 var(--script); color: var(--lilac-light); }
+#about .qm { display: none; }
+#about .arch::after { display: none; }
+#about .goal blockquote p { font: 500 clamp(21px, 1.85vw, 28px)/1.42 var(--sans); color: #F1ECF8; }
+#about .goal mark { font-weight: 600; color: #fff; }
+#about .goal-sign { margin-top: 22px; font: 400 clamp(32px, 2.6vw, 40px)/1 var(--script); color: var(--lilac-light); }
+@media (max-width: 599px) {
+  #about .ab-card { padding: 22px 22px 24px; }
+  #about .ab-card p { font-size: 16.5px; }
+  #about .goal blockquote p { font-size: 19px; }
+  #about .goal-sign { font-size: 30px; gap: 10px; }
+  #about .goal-sign svg { width: 40px; }
+}
+
+/* 2. О группе, круг 2: фото слева, три мысли справа столбиком по центру фото, первые две строками без коробок,
+   третья фиолетовой карточкой; без полоски у абзаца, без подписи под фото, без звёздочек у цитаты */
+#about .lead-big { padding-left: 0; max-width: 660px; }
+#about .h2 em { white-space: nowrap; }
+@media (min-width: 900px) { #about .ab-top { grid-template-columns: minmax(0, 440px) minmax(0, 1fr); column-gap: clamp(40px, 6vw, 100px); } }
+#about .lead-big::before { display: none; }
+#about .about-cap, #about .spark { display: none; }
+#about .ab-mid { grid-template-columns: minmax(0, 440px) minmax(0, 1fr); grid-template-rows: 1fr auto auto auto 1fr;
+  grid-template-areas: "m ." "m c1" "m c2" "m c3" "m ."; align-items: stretch; gap: 0 clamp(40px, 6vw, 100px); }
+#about .about-media { align-self: center; max-width: none; margin: 0; }
+#about .ab-c1, #about .ab-c2, #about .ab-c3 { align-self: auto; }
+#about .ab-c1, #about .ab-c2 { padding: 26px 0; background: none; border: 0; border-top: 1px solid rgba(255, 255, 255, .12); border-radius: 0; box-shadow: none; }
+#about .ab-c1, #about .ab-c2, #about .ab-c3 { max-width: 660px; }
+#about .ab-c1 p, #about .ab-c2 p { font-size: clamp(18px, 1.45vw, 21px); line-height: 1.45; color: #EDE7F6; }
+#about .ab-c3 { margin-top: 10px; padding: 30px 34px 32px; }
+#about .ab-c3 p { font-size: clamp(18px, 1.45vw, 21px); }
+@media (max-width: 899px) {
+  #about .ab-mid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "m" "c1" "c2" "c3"; gap: 0; }
+  #about .about-media { max-width: 360px; justify-self: center; margin-bottom: 18px; }
+  #about .ab-c1, #about .ab-c2 { padding: 20px 0; }
+  #about .ab-c1 p, #about .ab-c2 p, #about .ab-c3 p { font-size: 17px; }
+  #about .ab-c3 { padding: 22px 22px 24px; }
+}
+
+/* 2. О группе, круг 3: текст пунктами (слова как в ТЗ, поменялась только пунктуация), цитата компактной плашкой с вырезанным предметом */
+#about .ab-c1, #about .ab-c2 { padding: 28px 0; }
+#about .ab-who { font-size: 16px; line-height: 1.4; color: var(--ink-2); }
+#about .ab-who b { font-weight: 600; color: #F1ECF8; }
+#about .ab-say { margin-top: 6px; font-size: clamp(21px, 1.75vw, 25px); font-weight: 500; line-height: 1.3; color: #F6F2FC; }
+#about .ab-c2 .ab-say { margin-top: 0; }
+#about .ab-say strong { font-weight: 700; color: #fff; }
+#about .ab-tiles { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+#about .ab-tiles li { display: flex; align-items: center; gap: 12px; padding: 14px 18px 14px 14px; border-radius: 16px; font-size: 17px; line-height: 1.3; color: #EDE7F6;
+  background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+#about .ab-tiles svg { width: 26px; height: 26px; flex: none; padding: 5px; border-radius: 50%; color: #fff; background: var(--lilac-deep); }
+#about .ab-stars { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+#about .ab-stars li { display: flex; align-items: baseline; gap: 12px; font-size: 18px; line-height: 1.4; color: #EDE7F6; }
+#about .ab-stars svg { width: 12px; height: 12px; flex: none; color: var(--lilac-light); transform: translateY(1px); }
+#about .ab-c3 p { font-size: 17px; line-height: 1.45; }
+#about .ab-c3 .ab-big { display: block; margin: 4px 0 6px; font: 400 clamp(30px, 2.5vw, 38px)/1.05 var(--script); color: #fff; }
+/* цитата: плашка ниже, слева вырезанный предмет выходит за верхний край */
+#about .goal { overflow: visible; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); padding: clamp(26px, 3vw, 40px) clamp(26px, 4.4vw, 70px) clamp(26px, 3vw, 40px) clamp(20px, 3vw, 40px); margin-top: clamp(48px, 5vw, 72px); }
+#about .goal-media { align-self: stretch; position: relative; min-height: 220px; }
+#about .goal-decor { position: absolute; left: 50%; bottom: -10px; width: min(340px, 120%); transform: translateX(-50%) rotate(-6deg); filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55)); }
+@media (max-width: 899px) {
+  #about .ab-c1, #about .ab-c2 { padding: 22px 0; }
+  #about .ab-tiles { grid-template-columns: 1fr; gap: 8px; }
+  #about .ab-tiles li { font-size: 16px; padding: 12px 14px 12px 12px; }
+  #about .ab-stars li { font-size: 16.5px; }
+  #about .ab-say { font-size: 20px; }
+  #about .goal { grid-template-columns: 1fr; margin-top: 36px; padding-top: 14px; }
+  #about .goal-media { min-height: 150px; }
+  #about .goal-decor { width: 250px; bottom: 0; }
+}
+
+/* 2. О группе, круг 4: имя крупно Bebas, «автор и ведущая группы» рукописным над ним, как на первом экране */
+#about .ab-role { position: relative; z-index: 1; display: inline-block; padding: .1em .24em .32em .2em; margin: -.62em 0 -.3em .5em; font: 400 clamp(30px, 2.4vw, 36px)/1 var(--script);
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#about .ab-name { display: block; margin-top: 0; font: 400 clamp(44px, 3.9vw, 58px)/.95 var(--bebas); text-transform: uppercase; letter-spacing: .01em; color: #F6F2FC; }
+#about .ab-c1 .ab-say { margin-top: 18px; }
+@media (max-width: 599px) {
+  #about .ab-role { font-size: 30px; }
+  #about .ab-name { font-size: 46px; }
+}
+
+/* 2. О группе, круг 5: рукописные строки заходят на строку Bebas над ними; ключевые слова в плашках полужирным */
+#about .h2 em { top: -.3em; margin-bottom: -.4em; }
+#about .ab-role { top: 0; margin: -.1em 0 -.2em -.16em; } /* круг 6: снова над именем, с небольшим зазором без наезда */
+#about .ab-name { margin-top: 6px; }
+#about .ab-c1 .ab-say { margin-top: 22px; }
+#about .ab-tiles b { font-weight: 600; color: #fff; }
+
