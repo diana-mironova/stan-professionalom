@@ -838,19 +838,37 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 .spark { fill: var(--lilac-light); }
 .sp2, .sp5 { fill: var(--pink); }
 
-/* отзывы: пока место под скриншоты */
+/* отзывы учениц: три работы в арках, слова ученицы, имя */
 .reviews { background: var(--bg); }
-.rev-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px 40px; }
-.rev-ask { max-width: 46ch; font-size: 16px; line-height: 1.42; color: var(--ink-2); }
-.rev-grid { margin-top: clamp(26px, 3vw, 40px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.rev-slot { aspect-ratio: 4 / 5; border-radius: 26px; border: 1.5px dashed rgba(196, 179, 255, .45);
-  background: radial-gradient(70% 50% at 50% 100%, rgba(150, 118, 240, .2) 0%, rgba(150, 118, 240, 0) 70%), rgba(255, 255, 255, .03);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 20px; text-align: center; }
-.rev-slot svg { width: 34px; height: 34px; fill: none; stroke: var(--lilac-light); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
-.rev-slot span { font: italic 500 22px/1.15 var(--serif); color: var(--ink); }
-.rev-slot small { font-size: 13px; line-height: 1.35; color: var(--muted); }
-@media (max-width: 899px) { .rev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rev-slot { aspect-ratio: 3 / 4; } }
-@media (max-width: 599px) { .rev-grid { gap: 10px; } .rev-slot { border-radius: 20px; padding: 14px; } .rev-slot span { font-size: 19px; } }
+.rev-grid { margin-top: clamp(26px, 3vw, 40px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.rev { position: relative; display: flex; flex-direction: column; padding: 14px 14px clamp(24px, 2.4vw, 32px); border-radius: 30px;
+  background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); }
+.rev-works { flex: 1 1 auto; align-content: center; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 18px 18px 22px; border-radius: 22px;
+  background: radial-gradient(70% 80% at 50% 100%, rgba(150, 118, 240, .34) 0%, rgba(150, 118, 240, 0) 70%), linear-gradient(180deg, #2A2436, #221C2C); }
+.rev-works .arch { box-shadow: var(--ring), 0 16px 26px -12px rgba(0, 0, 0, .7); }
+.rev-works .arch::after { display: none; }
+.rev-works .arch:nth-child(2) { translate: 0 -10px; }
+.rev-q { position: relative; margin-top: 26px; padding: 0 clamp(8px, 1.4vw, 18px) 0 clamp(44px, 4vw, 56px); }
+.rev-q::before { content: "“"; position: absolute; left: clamp(6px, .8vw, 12px); top: -.05em; font: italic 400 78px/.8 var(--serif); color: var(--lilac); }
+.rev-q p { font-size: 16px; line-height: 1.46; color: var(--ink-2); }
+.rev-q p + p { margin-top: 10px; }
+.rev-who { margin-top: 20px; padding-left: clamp(44px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: 14px; color: var(--muted); }
+.rev-who b { font: italic 500 clamp(24px, 2vw, 28px)/1 var(--serif); color: var(--ink); }
+/* на планшете и телефоне отзывы листаются пальцем, следующая карточка видна краем */
+@media (max-width: 899px) {
+  .rev-grid { display: flex; gap: 12px; margin-left: calc(var(--gut) * -1); margin-right: calc(var(--gut) * -1); padding: 4px var(--gut) 30px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gut); overscroll-behavior-x: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .rev-grid::-webkit-scrollbar { display: none; }
+  .rev { flex: 0 0 min(86%, 440px); scroll-snap-align: start; }
+}
+@media (max-width: 599px) {
+  .rev { padding: 12px 12px 22px; border-radius: 24px; }
+  .rev-works { gap: 8px; padding: 14px 12px 16px; border-radius: 18px; }
+  .rev-q { margin-top: 22px; padding: 0 6px 0 38px; }
+  .rev-q::before { left: 4px; font-size: 64px; }
+  .rev-q p { font-size: 15px; line-height: 1.42; }
+  .rev-who { padding-left: 38px; margin-top: 16px; }
+}
 
 /* 7. Тарифы */
 .price { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
