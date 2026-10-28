@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Трансляция вебинара — «Стань профессионалом»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: #F6F1FD; color: #2B1E42; font-family: "Onest", system-ui, -apple-system, Arial, sans-serif; line-height: 1.35; font-variant-numeric: lining-nums; }
+  img { display: block; }
+
+  /* весь блок: один экран, как Zero Block */
+  .live { position: relative; overflow: hidden; padding: 28px 0 64px;
+    background: linear-gradient(180deg, #FDFBFF 0%, #F6F0FD 55%, #ECE2FB 100%); }
+  .cloud { position: absolute; pointer-events: none; height: auto; }
+  .c1 { width: 460px; left: -150px; top: 70px; opacity: .75; }
+  .c2 { width: 420px; right: -170px; top: -40px; opacity: .8; }
+  .c3 { width: 520px; right: -150px; bottom: -70px; opacity: .85; }
+  .c4 { width: 380px; left: -140px; bottom: 40px; opacity: .6; }
+
+  .in { position: relative; z-index: 2; width: 100%; max-width: 1248px; margin: 0 auto; padding: 0 24px; }
+
+  /* шапка */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid rgba(43, 30, 66, .09); }
+  .logo { width: 66px; height: auto; }
+  .onair { display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 20px; border-radius: 999px;
+    background: rgba(255, 255, 255, .72); border: 1px solid rgba(122, 95, 208, .22);
+    font-size: 15px; font-weight: 500; color: #2B1E42; white-space: nowrap; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #E0558F; box-shadow: 0 0 0 4px rgba(224, 85, 143, .18); }
+
+  /* первая часть: текст слева, плеер справа */
+  .main { display: grid; grid-template-columns: 360px 1fr; gap: 40px; align-items: start; margin-top: 40px; }
+  .title { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 500; font-size: 56px; line-height: 1.02; letter-spacing: -.01em; color: #2B1E42; }
+  .q { color: #7A5FD0; }
+  .sub { margin-top: 16px; font-size: 17px; line-height: 1.38; color: #54466D; }
+
+  .when { margin-top: 28px; padding: 18px 22px 20px; border-radius: 22px; background: rgba(255, 255, 255, .78); border: 1px solid rgba(122, 95, 208, .16); }
+  .date { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: 1; color: #5B41AD; }
+  .time { margin-top: 8px; font-size: 16px; color: #2B1E42; }
+
+  .speaker { margin-top: 22px; display: flex; align-items: center; gap: 18px; }
+  .arch { width: 92px; height: 116px; object-fit: cover; border-radius: 46px 46px 16px 16px; border: 3px solid #FFFFFF; box-shadow: 0 10px 24px rgba(91, 65, 173, .16); }
+  .name { font-size: 18px; font-weight: 600; color: #2B1E42; }
+  .role { margin-top: 4px; font-size: 15px; color: #85799C; }
+
+  /* место под плеер Kinescope (плеер с чатом), 16:9 */
+  .player { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 28px; background: #241838; overflow: hidden;
+    box-shadow: 0 30px 60px rgba(43, 30, 66, .18); }
+  .player-in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+  .play { width: 84px; height: 84px; }
+  .ph { font-size: 15px; color: rgba(255, 255, 255, .62); text-align: center; padding: 0 24px; }
+
+  /* план эфира: пункты слайда 3 из ТЗ */
+  .plan { margin-top: 64px; }
+  .plan-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+  .works { display: flex; gap: 12px; }
+  .works img { width: 72px; height: 90px; object-fit: cover; border-radius: 36px 36px 12px 12px; border: 3px solid #FFFFFF; box-shadow: 0 10px 22px rgba(91, 65, 173, .16); }
+  .works img:nth-child(odd) { margin-bottom: 14px; }
+  .plan-h { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 500; font-size: 42px; line-height: 1.05; color: #2B1E42; }
+  .cards { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { display: flex; gap: 16px; align-items: flex-start; min-height: 96px; padding: 20px 22px; border-radius: 22px; background: rgba(255, 255, 255, .74); border: 1px solid rgba(122, 95, 208, .14); }
+  .num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: #E6DDFA; color: #5B41AD; font-size: 14px; font-weight: 600; line-height: 36px; text-align: center; }
+  .card p { font-size: 16px; line-height: 1.38; color: #2B1E42; padding-top: 6px; text-wrap: balance; }
+  .card.gift { background: #5B41AD; border-color: #5B41AD; }
+  .card.gift .num { background: rgba(255, 255, 255, .18); color: #FFFFFF; }
+  .card.gift p { color: #FFFFFF; }
+
+  /* ноутбук и планшет в ширину: колонка уже */
+  @media (max-width: 1100px) {
+    .main { grid-template-columns: 300px 1fr; gap: 32px; }
+    .title { font-size: 48px; }
+    .date { font-size: 32px; }
+  }
+
+  /* планшет и телефон: всё в столбик, плеер на всю ширину */
+  @media (max-width: 860px) {
+    .live { padding: 18px 0 48px; }
+    .in { padding: 0 16px; }
+    .logo { width: 52px; }
+    .onair { height: 38px; padding: 0 14px; font-size: 14px; gap: 8px; }
+    .main { display: flex; flex-direction: column; align-items: stretch; margin-top: 28px; gap: 0; }
+    .sub { max-width: 345px; }
+    .plan-top { flex-direction: column; align-items: center; gap: 18px; }
+    .works { gap: 8px; }
+    .works img { width: 56px; height: 70px; border-radius: 28px 28px 10px 10px; border-width: 2px; }
+    .works img:nth-child(odd) { margin-bottom: 0; margin-top: 10px; }
+    .side { display: contents; }
+    .head { order: 1; text-align: center; }
+    .player { order: 2; }
+    .meta { order: 3; }
+    .title { font-size: 46px; }
+    .sub { margin: 14px auto 0; font-size: 16px; }
+    .player { margin-top: 24px; border-radius: 20px; }
+    .play { width: 64px; height: 64px; }
+    .ph { font-size: 14px; }
+    .meta { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; }
+    .when { margin-top: 0; padding: 16px 18px; border-radius: 18px; }
+    .date { font-size: 30px; }
+    .time { font-size: 15px; }
+    .speaker { margin-top: 0; padding: 12px 14px; border-radius: 18px; background: rgba(255, 255, 255, .78); border: 1px solid rgba(122, 95, 208, .16); gap: 12px; }
+    .arch { width: 56px; height: 70px; border-radius: 28px 28px 10px 10px; border-width: 2px; }
+    .name { font-size: 16px; }
+    .role { font-size: 14px; }
+    .plan { margin-top: 40px; }
+    .plan-h { font-size: 36px; text-align: center; }
+    .cards { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+    .card { min-height: 0; padding: 16px; gap: 12px; border-radius: 18px; }
+    .num { width: 30px; height: 30px; line-height: 30px; font-size: 13px; }
+    .card p { font-size: 15px; padding-top: 4px; }
+    .c1 { width: 300px; left: -120px; top: 60px; }
+    .c2 { width: 280px; right: -130px; top: -30px; }
+    .c3 { width: 340px; right: -140px; bottom: -40px; }
+    .c4 { display: none; }
+  }
+
+  @media (max-width: 560px) {
+    .title { font-size: 40px; }
+    .meta { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<section class="live" id="live">
+  <img class="cloud c1" src="img/puff1.png" alt="">
+  <img class="cloud c2" src="img/puff2.png" alt="">
+  <img class="cloud c3" src="img/puff3.png" alt="">
+  <img class="cloud c4" src="img/puff4.png" alt="">
+
+  <div class="in">
+    <div class="top">
+      <img class="logo" src="img/logo-plum.png" alt="Tretiakova School">
+      <div class="onair"><span class="dot"></span><span>Прямая трансляция вебинара</span></div>
+    </div>
+
+    <div class="main">
+      <div class="side">
+        <div class="head">
+          <h1 class="title"><span class="q">«</span>Стань<br>профессионалом<span class="q">»</span></h1>
+          <p class="sub">Закрытая группа по лепке и росписи 2.0 Третьяковой Вероники</p>
+        </div>
+        <div class="meta meta-desk">
+          <div class="when">
+            <div class="date">29 октября</div>
+            <div class="time">Начало в __:__ по Москве</div>
+          </div>
+          <div class="speaker">
+            <img class="arch" src="img/veronika-2.jpg" alt="Вероника Третьякова">
+            <div>
+              <div class="name">Вероника Третьякова</div>
+              <div class="role">Спикер вебинара</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player" id="player">
+        <div class="player-in">
+          <svg class="play" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="42" fill="#7A5FD0"/><path d="M35 28 L58 42 L35 56 Z" fill="#FFFFFF"/></svg>
+          <div class="ph">Здесь будет плеер трансляции</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-top">
+        <h2 class="plan-h">О чём поговорим</h2>
+        <div class="works">
+          <img src="img/spider.jpg" alt="">
+          <img src="img/lilo.jpg" alt="">
+          <img src="img/jack-close.jpg" alt="">
+          <img src="img/stitch.jpg" alt="">
+          <img src="img/jerry.jpg" alt="">
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card"><span class="num">01</span><p>Подведём итоги предыдущей&nbsp;группы</p></div>
+        <div class="card"><span class="num">02</span><p>Посмотрим на&nbsp;результаты учеников и&nbsp;услышим их истории</p></div>
+        <div class="card"><span class="num">03</span><p>Поговорим о&nbsp;том, как новые навыки влияют на&nbsp;работу кондитера</p></div>
+        <div class="card"><span class="num">04</span><p>Познакомимся с&nbsp;программой «Лепка и&nbsp;роспись&nbsp;2.0»</p></div>
+        <div class="card"><span class="num">05</span><p>Разберём тарифы, подписку и&nbsp;специальные условия участия</p></div>
+        <div class="card gift"><span class="num">06</span><p>В конце проведём розыгрыш</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
