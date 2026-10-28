@@ -860,6 +860,7 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
     overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gut); overscroll-behavior-x: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .rev-grid::-webkit-scrollbar { display: none; }
   .rev { flex: 0 0 min(86%, 440px); scroll-snap-align: start; }
+  .js .rev-grid .rv { opacity: 1; transform: none; }
 }
 @media (max-width: 599px) {
   .rev { padding: 12px 12px 22px; border-radius: 24px; }
