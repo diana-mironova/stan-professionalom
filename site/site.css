@@ -1307,3 +1307,112 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
   #lessons .ls-five-t br { display: none; }
 }
 
+/* =====================================================================
+   5. Запуски и формат, 28.10 поздно вечером: шрифты как в блоках 1–4 (Bebas, рукописный, основной), без значков в кружках,
+   текст пунктами со звёздочками (слова ТЗ, поменялась только разбивка на пункты). Под заголовком картинка-схема:
+   слева линия запусков от 29 октября, справа сроки подписки; вокруг вырезанные предметы из Codex (ключик, песочные часы, жемчужины)
+   ===================================================================== */
+#launch .launch-grid { align-items: stretch; }
+#launch .lcard { display: flex; flex-direction: column; padding: clamp(26px, 3vw, 40px); border-radius: 30px; }
+#launch .lcard--2 { background: var(--card); }
+#launch .h2 { font-size: clamp(44px, 4vw, 60px); line-height: .94; color: #F6F2FC; }
+#launch .h2 em { display: inline-block; position: relative; z-index: 1; top: -.3em; margin: -.1em 0 -.4em -.185em; padding: .1em .24em .3em .16em;
+  font: 400 1.16em/1 var(--script); letter-spacing: 0; text-transform: none; white-space: nowrap;
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* картинка-схема */
+#launch .lv { position: relative; display: block; container-type: inline-size; height: 230px; margin: 22px 0 0; padding: 0; border-radius: 22px; overflow: hidden;
+  background: radial-gradient(70% 80% at 50% 100%, rgba(150, 118, 240, .38) 0%, rgba(150, 118, 240, 0) 70%), linear-gradient(180deg, #3D3943, #35313B); }
+/* линия запусков: 29 октября ярко, дальше наборы примерно раз в три месяца */
+#launch .tl-date { position: absolute; left: 8%; top: 30px; display: flex; align-items: baseline; gap: 10px; margin: 0; white-space: nowrap; }
+#launch .tl-date b { font: 400 min(68px, 12cqw)/.9 var(--bebas); text-transform: uppercase; letter-spacing: .01em; color: #F6F2FC; }
+#launch .tl-date span { font: 400 min(28px, 4.9cqw)/1 var(--bebas); letter-spacing: .02em; color: var(--lilac-light); }
+#launch .tl-line { position: absolute; left: 8%; right: 0; top: 156px; height: 2px; }
+#launch .tl-line i { display: block; height: 100%; transform-origin: 0 50%;
+  background: linear-gradient(90deg, #C4B3FF 0%, rgba(196, 179, 255, .55) 55%, rgba(196, 179, 255, 0) 100%); }
+#launch .tl-dot { position: absolute; top: 157px; left: var(--x); width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%;
+  background: #3A3640; box-shadow: inset 0 0 0 2px rgba(196, 179, 255, .75); }
+#launch .tl-dot--now { width: 22px; height: 22px; margin: -11px 0 0 -11px; background: radial-gradient(circle at 35% 35%, #fff 0%, #C4B3FF 45%, #8C6CF0 100%);
+  box-shadow: 0 0 0 6px rgba(196, 179, 255, .18), 0 0 24px 4px rgba(165, 142, 242, .55); animation: tlPulse 2.4s ease-in-out infinite; }
+#launch .tl-dot--far { opacity: .45; }
+@keyframes tlPulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(196, 179, 255, .18), 0 0 24px 4px rgba(165, 142, 242, .55); }
+  50% { box-shadow: 0 0 0 11px rgba(196, 179, 255, .07), 0 0 34px 8px rgba(165, 142, 242, .75); }
+}
+#launch .tl-gap { position: absolute; top: 130px; left: var(--x); transform: translateX(-50%); font-size: 13px; line-height: 1; white-space: nowrap; color: rgba(222, 214, 238, .55); }
+#launch .tl-cap { position: absolute; top: 180px; left: var(--x); transform: translateX(-50%); font-size: 14px; font-weight: 500; line-height: 1.2; white-space: nowrap; color: rgba(222, 214, 238, .7); }
+#launch .tl-cap { transform: translateX(-7px); }
+#launch .tl-cap--now { transform: translateX(-11px); font-weight: 600; color: var(--lilac-light); }
+/* сроки подписки: 12 месяцев выделены, над ними плашка «до 30 ноября» */
+#launch .terms { position: absolute; left: min(28px, 4.9cqw); bottom: 38px; display: flex; align-items: flex-end; gap: min(12px, 2.1cqw); }
+#launch .terms span { position: relative; width: min(86px, 15.1cqw); height: min(112px, 19.7cqw); aspect-ratio: auto; display: grid; place-content: center; text-align: center;
+  border: 0; border-radius: 20px; font-size: 14px; line-height: 1.2; color: rgba(222, 214, 238, .75);
+  background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1px rgba(196, 179, 255, .22); }
+#launch .terms b { display: block; font: 400 min(64px, 11.3cqw)/.92 var(--bebas); color: var(--lilac-light); }
+#launch .terms .y { width: min(100px, 17.6cqw); height: min(136px, 24cqw); color: rgba(255, 255, 255, .85);
+  background: linear-gradient(160deg, #8C6CF0 0%, #5B41AD 100%); box-shadow: 0 24px 40px -18px rgba(0, 0, 0, .7), 0 0 34px -6px rgba(165, 142, 242, .6); }
+#launch .terms .y b { font-size: min(76px, 13.4cqw); color: #fff; }
+#launch .terms .y i { position: absolute; left: 50%; top: -13px; transform: translateX(-50%); padding: .34em .7em .38em; border-radius: 10px; white-space: nowrap;
+  font: 600 13px/1 var(--sans); color: #fff; background: linear-gradient(120deg, #C66AA6, #9B6BE0); box-shadow: 0 8px 16px -8px rgba(0, 0, 0, .6); }
+#launch .terms span:hover { translate: none; }
+
+/* вырезанные предметы: плавно покачиваются, появляются вместе с карточкой */
+#launch .dk { position: absolute; z-index: 4; height: auto; pointer-events: none; filter: drop-shadow(0 12px 14px rgba(0, 0, 0, .45));
+  animation: dkFloat 6s ease-in-out infinite; transition: opacity .9s ease, scale .9s cubic-bezier(.2, .8, .2, 1); }
+#launch .dk-key { width: min(124px, 21.8cqw); right: 5%; top: 18px; rotate: -8deg; animation-delay: -2s; }
+#launch .dk-clock { width: min(98px, 17.3cqw); right: min(34px, 6cqw); bottom: 22px; animation-delay: -3s; }
+#launch .dk-pearls { z-index: 5; width: min(86px, 15.1cqw); right: min(14px, 2.5cqw); bottom: 6px; animation: none; }
+
+/* текст: пункты со звёздочками, ключевые слова полужирным, внизу плашка */
+#launch .lstars { list-style: none; margin: 26px 0 24px; padding: 0; display: grid; gap: 12px; }
+#launch .lstars li { display: flex; align-items: baseline; gap: 12px; font-size: 18px; line-height: 1.42; color: #EDE7F6; }
+#launch .lstars svg { width: 12px; height: 12px; flex: none; color: var(--lilac-light); transform: translateY(1px); }
+#launch .lstars b, #launch .lhot b { font-weight: 600; color: #fff; }
+#launch .lhot { margin: auto 0 0; padding: 24px 28px 26px; border-radius: 22px; font-size: 17px; line-height: 1.45; color: #EDE7F6;
+  background: radial-gradient(90% 70% at 90% 0%, rgba(188, 169, 255, .4) 0%, rgba(188, 169, 255, 0) 70%), linear-gradient(150deg, #5B41AD 0%, #3B2874 100%);
+  box-shadow: 0 24px 40px -24px rgba(0, 0, 0, .7); }
+#launch .lhot--soft { background: rgba(165, 142, 242, .1); box-shadow: inset 0 0 0 1px rgba(196, 179, 255, .25); }
+
+/* анимация: линия прорисовывается, точки и сроки появляются по очереди; на телефоне тоже (класс .on от скрипта внизу) */
+.js #launch .tl-line i { transform: scaleX(0); transition: transform 1.4s cubic-bezier(.2, .8, .2, 1) .2s; }
+.js #launch .lcard.on .tl-line i { transform: scaleX(1); }
+.js #launch .tl-dot, .js #launch .tl-gap, .js #launch .tl-cap { opacity: 0; transition: opacity .6s ease calc(.3s + var(--k) * .35s); }
+.js #launch .lcard.on .tl-dot, .js #launch .lcard.on .tl-gap, .js #launch .lcard.on .tl-cap { opacity: 1; }
+.js #launch .lcard.on .tl-dot--far { opacity: .45; }
+.js #launch .terms span { opacity: 0; translate: 0 18px; transition: opacity .6s ease calc(.15s + var(--i) * .12s), translate .8s cubic-bezier(.2, .8, .2, 1) calc(.15s + var(--i) * .12s); }
+.js #launch .lcard.on .terms span { opacity: 1; translate: 0 0; }
+#launch .lcard:hover .terms .y { translate: 0 -6px; }
+.js #launch .lcard .dk { opacity: 0; scale: .6; }
+.js #launch .lcard.on .dk { opacity: 1; scale: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #launch .dk, #launch .tl-dot--now { animation: none; }
+  .js #launch .tl-line i, .js #launch .tl-dot, .js #launch .tl-gap, .js #launch .tl-cap, .js #launch .terms span, #launch .dk { transition: none; }
+}
+
+/* от 700 до 1023: карточки одна под другой, не шире 720, схема как на компьютере */
+@media (max-width: 1023px) { #launch .launch-grid { grid-template-columns: minmax(0, 1fr); max-width: 720px; margin: 0 auto; gap: 18px; } }
+@media (max-width: 699px) {
+  #launch .lcard { padding: 26px 20px 20px; }
+  #launch .h2 { font-size: 41px; padding: 0; }
+  #launch .lv { height: 220px; margin-top: 18px; }
+  #launch .tl-date { left: 7%; top: 24px; gap: 8px; }
+  #launch .tl-date b { font-size: min(46px, 13.5cqw); }
+  #launch .tl-date span { font-size: min(20px, 5.8cqw); }
+  #launch .tl-line { left: 7%; top: 146px; }
+  #launch .tl-dot { top: 147px; }
+  #launch .tl-gap { top: 120px; font-size: 12px; }
+  #launch .tl-cap { top: 168px; font-size: 13px; }
+  #launch .dk-key { width: min(86px, 24cqw); top: 12px; right: 2%; }
+  #launch .terms { left: auto; right: min(16px, 5cqw); bottom: 18px; gap: min(8px, 2.5cqw); }
+  #launch .terms span { width: min(58px, 18.4cqw); height: min(80px, 25.4cqw); border-radius: 16px; font-size: 12px; }
+  #launch .terms b { font-size: min(44px, 14cqw); }
+  #launch .terms .y { width: min(70px, 22.2cqw); height: min(96px, 30.5cqw); }
+  #launch .terms .y b { font-size: min(52px, 16.5cqw); }
+  #launch .terms .y i { top: -11px; font-size: 11px; }
+  #launch .dk-clock { width: 62px; right: auto; left: 16px; top: 12px; bottom: auto; }
+  #launch .dk-pearls { width: min(66px, 20cqw); right: auto; left: min(52px, 16.5cqw); top: 56px; bottom: auto; }
+  #launch .lstars { margin: 22px 0 20px; gap: 10px; }
+  #launch .lstars li { font-size: 16.5px; }
+  #launch .lhot { padding: 20px 20px 22px; font-size: 16px; }
+}
+
