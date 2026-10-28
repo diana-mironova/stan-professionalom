@@ -522,13 +522,13 @@
     let backY, minRy, need;
     const fit = () => {
       ch = cw * 4 / 3;
-      backY = W >= 900 ? (tr.bottom - hr.top) - tr.height * .28 : ctaB + ch * (small ? .02 : .08);
-      minRy = Math.max((ctaB + 16 + .475 * ch - backY) / 1.819, ch * (small ? .5 : .45));
+      backY = W >= 900 ? (tr.bottom - hr.top) - tr.height * .28 : ctaB + ch * (small ? 0 : .08);
+      minRy = Math.max((ctaB + 16 + .475 * ch - backY) / 1.819, ch * (small ? .4 : .45));
       need = backY + minRy * 2 + ch / 2 + capH + 8;
     };
     cw = maxCw; fit();
     while (!small && need > vh && cw > minCw) { cw = Math.max(minCw, cw - 4); fit(); }
-    H = Math.max(vh, need, hero.clientHeight);
+    H = small ? need : Math.max(vh, need, hero.clientHeight); // на телефоне орбита сразу под кнопкой
     hero.style.minHeight = H + 'px';
     const frontY = H - capH - ch / 2 - 8;
     cy = (backY + frontY) / 2;
