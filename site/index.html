@@ -7,7 +7,7 @@
 <title>«Стань профессионалом» — закрытая группа по лепке и росписи 2.0 Третьяковой Вероники</title>
 <meta name="description" content="Закрытая группа по лепке и росписи 2.0 Третьяковой Вероники. Лепка из мастики и съедобная художественная роспись на мастике. Старт продаж — 29 октября 2026 года.">
 <script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="site.css?v=28-10-bebas">
+<link rel="stylesheet" href="site.css?v=28-10-blok1">
 </head>
 <body>
 
@@ -21,12 +21,8 @@
 </header>
 
 <!-- 1. Первый экран -->
-<section class="hero" id="hero">
-  <div class="sky">
-    <img class="cloud c1" src="img/puff1.png" alt="">
-    <img class="cloud c2" src="img/puff3.png" alt="">
-  </div>
-  <div class="cols"><div class="wrap"><i></i><i></i><i></i><i></i></div></div>
+<section class="hero hv" id="hero">
+  <div class="sky"></div>
 
   <header class="nav wrap">
     <a class="logo" href="#hero"><img src="img/logo-white.png" alt="Tretiakova School"></a>
@@ -34,26 +30,30 @@
     <a class="nav-btn" href="https://t.me/Trtiakova_School_bot">Присоединиться</a>
   </header>
 
-  <div class="stats">
-    <div class="stat"><b>13</b><span>уроков уже на старте</span></div>
-    <div class="stat"><b>5</b><span>тематических композиций</span></div>
-  </div>
-
-  <div class="head wrap">
-    <h1 class="title" id="title"><span class="q">«</span>Стань<br><span class="l2">профессионалом<svg class="swash" viewBox="0 0 600 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 90 6, 170 4, 250 10 S 420 22, 520 11 S 585 7, 596 9"/></svg></span><span class="q">»</span></h1>
-    <p class="lead">Закрытая группа по лепке и росписи&nbsp;2.0 Третьяковой Вероники</p>
-    <p class="dirs"><span>Лепка из мастики</span><svg class="star" viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Съедобная художественная роспись на мастике</span></p>
-    <div class="cta-row">
-      <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-      <p class="date">Старт продаж<b>29 октября 2026 года</b></p>
+  <div class="wrap"><div class="hv-grid">
+    <div class="hv-text">
+      <p class="hv-start"><span class="dot" aria-hidden="true"></span><span>Старт продаж <b>29&nbsp;октября 2026&nbsp;года</b></span></p>
+      <div class="hv-main">
+        <p class="hv-sub">Закрытая группа по&nbsp;лепке и&nbsp;росписи&nbsp;2.0</p>
+        <h1 class="hv-title" id="title"><span class="t-a"><span class="q">«</span>Стань</span> <span class="t-b">профессионалом<span class="q">»</span></span></h1>
+        <p class="hv-dirs"><span>Лепка из&nbsp;мастики</span><svg class="star" viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Съедобная художественная роспись на&nbsp;мастике</span></p>
+        <div class="hv-cta">
+          <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <div class="hv-facts">
+            <p><b>13</b><span>уроков уже<br>на&nbsp;старте</span></p>
+            <p><b>5</b><span>тематических<br>композиций</span></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="ring" id="ring" aria-label="Работы автора: композиции курса"></div>
-  <p class="cap orbit-cap" id="cap"></p>
-
-  <img class="cloud c3" src="img/puff2.png" alt="">
-  <img class="cloud c4" src="img/puff4.png" alt="">
+    <div class="hv-wheel" id="wheel" aria-label="Работы автора: композиции курса">
+      <div class="hv-track" id="track"></div>
+      <div class="hv-arrows" id="arrows">
+        <button class="hv-arr" id="prev" type="button" aria-label="Предыдущее фото"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4.5M9 5 4 10l5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="hv-arr" id="next" type="button" aria-label="Следующее фото"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div></div>
   <div class="grain"></div>
 </section>
 
@@ -521,101 +521,95 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
-/* первый экран: орбита */
+/* первый экран, слайдер (Диана, 28.10): главное фото крупно, стрелки прямо под ним;
+   компьютер: три полупрозрачных фото сзади справа полудугой; телефон: главное по центру, два полупрозрачных по бокам */
 (() => {
   const DATA = [
-    ['jack-full', '«Капитан Джек Воробей»', '3 урока'],
-    ['lilo', '«Лило и Стич»', '2 урока'],
-    ['arab', '«Арабская ночь»', '3 урока по росписи'],
-    ['tom', '«Том и Джерри»', '3 урока'],
-    ['spider', '«Человек-паук»', '2 урока'],
-    ['jasmine', '«Арабская ночь»', '3 урока по росписи'],
-    ['lilo-solo', '«Лило и Стич»', '2 урока'],
-    ['jerry', '«Том и Джерри»', '3 урока'],
-    ['jack-solo', '«Капитан Джек Воробей»', '3 урока'],
-    ['genie', '«Арабская ночь»', '3 урока по росписи'],
+    ['jack-full', '«Капитан Джек Воробей»'],
+    ['lilo', '«Лило и Стич»'],
+    ['arab', '«Арабская ночь»'],
+    ['tom', '«Том и Джерри»'],
+    ['spider', '«Человек-паук»'],
+    ['jasmine', '«Арабская ночь»'],
+    ['ship', '«Капитан Джек Воробей»'],
+    ['jerry', '«Том и Джерри»'],
+    ['lilo-solo', '«Лило и Стич»'],
+    ['genie', '«Арабская ночь»'],
   ];
   const hero = document.getElementById('hero');
-  const ring = document.getElementById('ring');
-  const cap = document.getElementById('cap');
-  const title = document.getElementById('title');
-  const head = hero.querySelector('.head');
-  const ALL = DATA.map((_, i) => i);
-  const PHONE = [1, 2, 3, 4, 5, 6, 7, 8]; // на телефоне 8 карточек, иначе они ложатся стопкой
-  let act = ALL, N = ALL.length, STEP = Math.PI * 2 / N;
+  const wheel = document.getElementById('wheel');
+  const track = document.getElementById('track');
+  const arrows = document.getElementById('arrows');
+  const N = DATA.length;
+  const DEG = Math.PI / 180;
 
   const cards = DATA.map(([f, t]) => {
     const el = document.createElement('figure');
-    el.className = 'card';
-    el.innerHTML = `<img src="img/${f}.jpg" alt="Торт ${t}" draggable="false" loading="eager">`;
-    ring.appendChild(el);
+    el.className = 'hv-card';
+    el.innerHTML = `<img src="img/${f}.jpg" alt="Торт ${t}" draggable="false">`;
+    track.appendChild(el);
     return el;
   });
 
-  let W, H, cw, ch, cx, cy, rx, ry, small = false;
+  let phone = false, W, H, cw, ch, fx, fy, L = {};
   function measure() {
-    hero.style.minHeight = '';
-    W = hero.clientWidth;
-    const vh = window.innerHeight;
-    small = W < 600;
-    act = small ? PHONE : ALL; N = act.length; STEP = Math.PI * 2 / N;
-    cards.forEach((c, i) => { c.style.display = act.includes(i) ? '' : 'none'; });
-    front = -1;
-    // фото берут самый крупный размер, при котором орбита помещается в экран
-    const maxCw = small ? Math.min(W * .46, 210) : Math.max(160, Math.min(W * .17, 255));
-    const minCw = Math.max(150, Math.min(W * .125, 225));
-    const capH = small ? 58 : 66;
-    const padB = small ? 40 : 48; // место под подписью переднего торта
-    const hr = hero.getBoundingClientRect();
-    const tr = title.getBoundingClientRect();
-    const ctaB = head.getBoundingClientRect().bottom - hr.top;
-    let backY, minRy, need;
-    const fit = () => {
-      ch = cw * 4 / 3;
-      backY = W >= 900 ? (tr.bottom - hr.top) - tr.height * .28 : ctaB + ch * (small ? 0 : .08);
-      minRy = Math.max((ctaB + 16 + .475 * ch - backY) / 1.819, ch * (small ? .4 : .45));
-      need = backY + minRy * 2 + ch / 2 + capH + 8 + padB;
-    };
-    cw = maxCw; fit();
-    while (!small && need > vh && cw > minCw) { cw = Math.max(minCw, cw - 4); fit(); }
-    H = small ? need : Math.max(vh, need, hero.clientHeight); // на телефоне орбита сразу под кнопкой
-    hero.style.minHeight = H + 'px';
-    const frontY = H - capH - ch / 2 - 8 - padB;
-    cy = (backY + frontY) / 2;
-    ry = (frontY - backY) / 2;
-    cx = W / 2;
-    rx = small ? W * .47 : Math.min(W * .45, 700);
-    cards.forEach(c => c.style.setProperty('--cw', cw + 'px'));
-    cap.style.top = (frontY + ch / 2 + 14) + 'px';
+    phone = window.innerWidth < 900;
+    W = wheel.clientWidth; H = wheel.clientHeight;
+    const gap = phone ? 16 : 20, aH = 54;
+    if (phone) {
+      cw = Math.min(W * .62, 260); ch = cw * 4 / 3;
+      fx = W / 2;
+      fy = (H - (ch + gap + aH)) / 2 + ch / 2;
+      L = { dx: W * .4, dy: -14, s: .72, o: .4 };
+    } else {
+      ch = Math.min(H - 56 - gap - aH, W * .64 * 4 / 3); cw = ch * 3 / 4;
+      fx = cw / 2 + 8;
+      fy = (H - (ch + gap + aH)) / 2 + ch / 2;
+      const s = .4; // задние фото меньше и дальше от главного, с просветом между собой
+      L = { s, o: .42, x2: W - cw * s / 2 - 6, rx: 60, ry: H * .345 };
+    }
+    cards.forEach(c => c.style.setProperty('--cw', cw.toFixed(1) + 'px'));
+    arrows.style.left = fx.toFixed(1) + 'px';
+    arrows.style.top = (fy + ch / 2 + gap).toFixed(1) + 'px';
   }
 
-  let angle = 0, vel = 0, drag = false, lastX = 0, lastT = 0, front = -1, visible = true;
+  const lerp = (a, b, t) => ({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, s: a.s + (b.s - a.s) * t, o: a.o + (b.o - a.o) * t });
+  // компьютер: место на дуге справа для 1…4 (1 сверху, 2 посередине, 3 снизу, к 4 фото гаснет)
+  const arc = r => {
+    const th = (r - 2) * 62 * DEG;
+    return { x: L.x2 - L.rx * (1 - Math.cos(th)), y: fy + L.ry * Math.sin(th), s: L.s, o: r <= 3 ? L.o : L.o * Math.max(0, 4 - r) };
+  };
+  function stateDesk(rel) {
+    const F = { x: fx, y: fy, s: 1, o: 1 };
+    if (rel <= -1 || rel >= 4) return null;
+    if (rel < 0) return lerp({ x: fx - cw * .22, y: fy, s: .9, o: 0 }, F, rel + 1);
+    if (rel < 1) return lerp(F, arc(1), rel);
+    return arc(rel);
+  }
+  // телефон: главное по центру, по бокам по одному, дальше гаснут; бока чуть выше и меньше, получается дуга
+  function statePhone(rel) {
+    const a = Math.abs(rel), sg = Math.sign(rel) || 1;
+    if (a >= 2) return null;
+    const F = { x: fx, y: fy, s: 1, o: 1 };
+    const S1 = { x: fx + sg * L.dx, y: fy + L.dy, s: L.s, o: L.o };
+    const S2 = { x: fx + sg * L.dx * 1.6, y: fy + L.dy * 2.4, s: L.s * .8, o: 0 };
+    return a < 1 ? lerp(F, S1, a) : lerp(S1, S2, a - 1);
+  }
+
+  let pos = 0, target = 0, drag = false, hover = false, lastX = 0, lastY = 0, lastT = 0, vel = 0, visible = true, wait = 0;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const AUTO = reduce ? 0 : (Math.PI * 2) / 72000; // полный круг за 72 секунды
+  const HOLD = 3400; // фото стоит впереди 3,4 с, потом листается само
 
   function place() {
-    let best = -2, bi = 0;
     for (let k = 0; k < N; k++) {
-      const i = act[k];
-      const th = angle + k * STEP;
-      const s = Math.sin(th), c = Math.cos(th);
-      const d = (c + 1) / 2;
-      const sc = small ? .36 + .64 * d * d : .42 + .58 * d;
-      const x = cx + rx * s - cw / 2, y = cy + ry * c - ch / 2;
-      const el = cards[i];
-      el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${sc.toFixed(3)})`;
-      el.style.zIndex = String(1 + Math.round(d * 99));
-      el.style.opacity = Math.min(1, .1 + d * 1.85).toFixed(3);
-      el.style.setProperty('--mist', Math.max(0, .5 - d * 1.05).toFixed(3));
-      if (c > best) { best = c; bi = i; }
-    }
-    if (bi !== front) {
-      front = bi;
-      cap.style.opacity = 0;
-      setTimeout(() => {
-        cap.innerHTML = `${DATA[bi][1]}<small>${DATA[bi][2].replace(' ', ' ')}</small>`;
-        cap.style.opacity = 1;
-      }, 220);
+      let rel = ((k - pos) % N + N) % N; if (rel >= N / 2) rel -= N;
+      const el = cards[k], st = phone ? statePhone(rel) : stateDesk(rel);
+      if (!st || st.o <= .005) { el.style.opacity = '0'; el.style.visibility = 'hidden'; continue; }
+      el.style.visibility = '';
+      el.style.transform = `translate3d(${(st.x - cw / 2).toFixed(1)}px, ${(st.y - ch / 2).toFixed(1)}px, 0) scale(${st.s.toFixed(3)})`;
+      el.style.opacity = st.o.toFixed(3);
+      el.style.zIndex = String(100 - Math.round(Math.abs(rel) * 25));
+      el.classList.toggle('back', Math.abs(rel) > .5);
     }
   }
 
@@ -623,35 +617,41 @@
   function tick(now) {
     const dt = Math.min(48, now - prev); prev = now;
     if (!drag && visible) {
-      angle -= (AUTO + vel) * dt;
-      vel *= Math.pow(.94, dt / 16);
-      if (Math.abs(vel) < 1e-6) vel = 0;
+      if (!reduce && !hover) { wait += dt; if (wait > HOLD) { wait = 0; target += 1; } }
+      pos += (target - pos) * (1 - Math.exp(-dt / 200));
       place();
     }
     requestAnimationFrame(tick);
   }
 
-  ring.addEventListener('pointerdown', e => {
-    drag = true; vel = 0; lastX = e.clientX; lastT = performance.now();
-    ring.classList.add('drag'); ring.setPointerCapture(e.pointerId);
+  const go = d => { target = Math.round(target) + d; wait = 0; };
+  document.getElementById('prev').addEventListener('click', () => go(-1));
+  document.getElementById('next').addEventListener('click', () => go(1));
+
+  // компьютер: мышью вверх-вниз или вбок; телефон: пальцем вбок
+  track.addEventListener('pointerdown', e => {
+    drag = true; vel = 0; wait = 0; lastX = e.clientX; lastY = e.clientY; lastT = performance.now();
+    track.classList.add('drag'); track.setPointerCapture(e.pointerId);
   });
-  ring.addEventListener('pointermove', e => {
+  track.addEventListener('pointermove', e => {
     if (!drag) return;
-    const now = performance.now(), dx = e.clientX - lastX;
-    const da = dx / rx * .9;
-    angle += da;
-    vel = -da / Math.max(8, now - lastT);
-    lastX = e.clientX; lastT = now;
+    const now = performance.now();
+    const dy = e.clientY - lastY, dx = e.clientX - lastX;
+    const d = phone ? -dx / (W * .4) : (Math.abs(dy) > Math.abs(dx) ? -dy : -dx) / 240;
+    pos += d; vel = d / Math.max(8, now - lastT);
+    lastX = e.clientX; lastY = e.clientY; lastT = now;
     place();
   });
-  const end = () => { drag = false; ring.classList.remove('drag'); };
-  ring.addEventListener('pointerup', end);
-  ring.addEventListener('pointercancel', end);
+  const end = () => { if (!drag) return; drag = false; track.classList.remove('drag'); target = Math.round(pos + vel * 220); wait = 0; };
+  track.addEventListener('pointerup', end);
+  track.addEventListener('pointercancel', end);
+  wheel.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hover = true; });
+  wheel.addEventListener('pointerleave', () => { hover = false; });
 
   new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(hero);
   let lastW = 0;
-  window.addEventListener('resize', () => { if (hero.clientWidth === lastW) return; lastW = hero.clientWidth; measure(); place(); });
-  const start = () => { lastW = hero.clientWidth; measure(); place(); requestAnimationFrame(t => { prev = t; tick(t); }); };
+  window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; lastW = window.innerWidth; measure(); place(); });
+  const start = () => { lastW = window.innerWidth; measure(); place(); requestAnimationFrame(t => { prev = t; tick(t); }); };
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else window.addEventListener('load', start);
 })();
 
@@ -673,7 +673,7 @@
   // липкая шапка
   const bar = document.getElementById('bar');
   new IntersectionObserver(es => bar.classList.toggle('show', !es[0].isIntersecting), { rootMargin: '-80px 0px 0px 0px' })
-    .observe(document.querySelector('.hero .head'));
+    .observe(document.querySelector('#hero .hv-text'));
 
   // двенадцать точек по кругу
   const months = document.getElementById('months');

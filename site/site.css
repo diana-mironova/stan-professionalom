@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Onest:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Onest:wght@400;500;600&family=Great+Vibes&display=swap");
 
 :root {
   --bg: #FBF8FE;
@@ -907,3 +907,95 @@ mark { background-image: linear-gradient(transparent 58%, rgba(165, 142, 242, .4
 .hero .title { font-size: clamp(48px, min(7vw, 10.5vh), 112px); }
 @media (max-width: 899px) { .hero .title { font-size: clamp(48px, 12.6vw, 92px); } }
 @media (max-width: 599px) { .foot-title { font-size: clamp(40px, 12vw, 64px); } }
+
+/* =====================================================================
+   1. Первый экран, 28.10 вечером, круг 5: плашка, старт продаж сверху, рукописная строка над заголовком,
+   фото справа вертикальным полукругом. Три шрифта: Great Vibes, Bebas, Onest. Одна «таблетка» (старт продаж) и кнопка.
+   ===================================================================== */
+:root { --script: "Great Vibes", "Cormorant Garamond", cursive; }
+.hv { min-height: 0; padding-bottom: clamp(24px, 4vh, 48px); }
+.hv-grid { position: relative; z-index: 5; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  height: clamp(540px, calc(100svh - 170px), 680px); margin-top: clamp(8px, 1.4vh, 16px); overflow: hidden;
+  border-radius: clamp(24px, 2.6vw, 40px);
+  background: radial-gradient(70% 90% at 86% 50%, rgba(140, 108, 236, .34) 0%, rgba(140, 108, 236, 0) 62%),
+    radial-gradient(50% 60% at 0% 100%, rgba(240, 169, 211, .1) 0%, rgba(240, 169, 211, 0) 70%),
+    linear-gradient(160deg, #4A4650 0%, #3B3741 100%);
+  box-shadow: 0 50px 90px -50px rgba(0, 0, 0, .85), inset 0 0 0 1px rgba(255, 255, 255, .07), inset 0 1px 0 rgba(255, 255, 255, .08); }
+.hv-text { position: relative; z-index: 2; display: grid; grid-template-rows: auto 1fr; min-width: 0;
+  padding: clamp(24px, 2.8vw, 40px) clamp(10px, 1vw, 16px) clamp(28px, 3.4vw, 48px) clamp(30px, 4vw, 60px); }
+.hv-start { justify-self: start; display: inline-flex; align-items: center; gap: 12px; padding: 9px 20px 9px 16px; border-radius: 999px;
+  background: rgba(150, 118, 240, .16); box-shadow: inset 0 0 0 1px rgba(196, 179, 255, .22); font-size: 16px; line-height: 1.2; color: var(--ink-2); }
+.hv-start b { font-weight: 600; color: var(--ink); }
+.hv-start .dot { position: relative; width: 9px; height: 9px; flex: none; border-radius: 50%; background: var(--lilac-light); }
+.hv-start .dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid var(--lilac-light); opacity: 0; animation: hvPulse 2.2s ease-out infinite; }
+@keyframes hvPulse { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(1.5); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hv-start .dot::after { animation: none; } }
+.hv-main { align-self: center; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-bottom: clamp(8px, 2vh, 24px); }
+.hv-sub { position: relative; z-index: 2; font: 400 clamp(36px, 3.75vw, 56px)/1 var(--script); margin: -.12em 0 -.1em -.16em; padding: .12em .25em .12em .22em;
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hv-title { position: relative; z-index: 1; font-family: var(--bebas); font-weight: 400; text-transform: uppercase; letter-spacing: .008em; line-height: .9;
+  color: #F6F2FC; white-space: nowrap; font-size: min(5.2vw, 77px); margin-left: -.05em; text-shadow: 0 10px 40px rgba(0, 0, 0, .25); }
+.hv-title .q { color: var(--lilac); }
+.hv-dirs { margin-top: clamp(16px, 2.4vh, 24px); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  font-size: clamp(16px, 1.3vw, 19px); font-weight: 500; line-height: 1.35; color: #F1ECF8; }
+.hv-dirs .star { width: 11px; height: 11px; flex: none; color: var(--lilac-light); }
+.hv-cta { margin-top: clamp(28px, 4.4vh, 44px); display: flex; align-items: center; flex-wrap: wrap; gap: 18px 36px; }
+.hv-cta .btn { font-size: 19px; padding: 9px 9px 9px 34px; box-shadow: 0 22px 50px -18px rgba(122, 95, 208, .95), inset 0 1px 0 rgba(255, 255, 255, .25); }
+.hv-cta .btn .arr { width: 52px; height: 52px; }
+.hv-facts { display: flex; align-items: center; }
+.hv-facts p { display: flex; align-items: center; gap: 12px; font-size: 15px; line-height: 1.25; color: var(--ink-2); }
+.hv-facts p + p { margin-left: 26px; padding-left: 26px; border-left: 1px solid rgba(255, 255, 255, .14); }
+.hv-facts b { font: 400 58px/.8 var(--bebas); color: var(--lilac-light); letter-spacing: .01em; }
+.hv-wheel { position: relative; z-index: 1; overflow: hidden; user-select: none; -webkit-user-select: none; }
+.hv-track { position: absolute; inset: 0; touch-action: pan-y; cursor: grab; }
+.hv-track.drag { cursor: grabbing; }
+.hv-arrows { position: absolute; z-index: 150; display: flex; gap: 12px; transform: translateX(-50%); }
+/* задние фото: без тени и чуть тусклее, внимание на главном */
+.hv-card.back { box-shadow: none; filter: brightness(.9) saturate(.85); }
+.hv-card { transition: box-shadow .3s; }
+.hv-arr { width: 54px; height: 54px; display: grid; place-items: center; padding: 0; border-radius: 50%; cursor: pointer; color: var(--ink);
+  background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .18); transition: background .25s, border-color .25s, transform .25s; }
+.hv-arr svg { width: 20px; height: 20px; }
+.hv-arr:hover { background: var(--lilac-deep); border-color: var(--lilac-deep); }
+.hv-arr:active { transform: scale(.94); }
+.hv-arr:focus-visible { outline: 2px solid var(--lilac-light); outline-offset: 3px; }
+.hv-arc { display: none; }
+.hv-card { position: absolute; left: 0; top: 0; margin: 0; width: var(--cw); aspect-ratio: 3 / 4; overflow: hidden; border-radius: 20px;
+  background: #3E3A43; box-shadow: 0 34px 60px -26px rgba(0, 0, 0, .85), 0 10px 22px -12px rgba(0, 0, 0, .55);
+  transform-origin: 50% 50%; will-change: transform; filter: brightness(var(--br, 1)); }
+.hv-card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; display: block; }
+/* один тон для всех фото: лёгкий лиловый свет сверху и тень снизу, тонкий светлый край */
+.hv-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(180deg, rgba(150, 118, 240, .18) 0%, rgba(150, 118, 240, 0) 40%, rgba(30, 20, 50, .28) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); }
+@media (max-width: 899px) {
+  .hv-grid { grid-template-columns: 1fr; height: auto; }
+  .hv-text { padding: 20px 18px 4px; }
+  .hv-start { justify-self: center; font-size: 14px; padding: 8px 16px 8px 14px; gap: 10px; }
+  .hv-main { align-items: center; text-align: center; margin-top: 26px; padding-bottom: 0; }
+  .hv-sub { margin: -.12em 0 -.04em; padding: .12em .22em; }
+  .hv-title { font-size: min(calc(9.3vw - 2px), 72px); margin-left: 0; }
+  .hv-dirs { justify-content: center; }
+  .hv-cta { justify-content: center; }
+  .hv-wheel { height: 440px; margin-top: 10px; }
+  .hv-card { border-radius: 18px; }
+}
+@media (max-width: 599px) {
+  .hv-main { margin-top: 36px; }
+  .hv-title { order: 1; white-space: normal; font-size: 23vw; line-height: .8; text-shadow: none; margin-left: 0; }
+  .hv-title .q { display: none; }
+  .hv-title .t-a { display: block; text-align: center; }
+  .hv-title .t-b { position: relative; z-index: 1; display: block; margin-top: -.62em; padding: .1em .2em .14em; font: 400 .54em/1 var(--script); text-transform: none; letter-spacing: 0;
+    background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hv-sub { order: 2; margin: 14px 0 0; padding: 8px 16px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 999px;
+    font: 500 min(14px, 3.7vw)/1.3 var(--sans); background: none; color: var(--ink-2); -webkit-text-fill-color: currentColor; white-space: nowrap; }
+  .hv-dirs { order: 3; }
+  .hv-cta { order: 4; }
+  .hv-dirs { flex-direction: column; gap: 2px; font-size: 16px; }
+  .hv-dirs .star { width: 9px; height: 9px; margin: 3px 0; }
+  .hv-cta { flex-direction: column; gap: 24px; }
+  .hv-cta .btn { font-size: 18px; }
+  .hv-facts p { gap: 10px; font-size: 14.5px; text-align: left; }
+  .hv-facts p + p { margin-left: 18px; padding-left: 18px; }
+  .hv-facts b { font-size: 52px; }
+}
