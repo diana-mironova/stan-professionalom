@@ -7,7 +7,7 @@
 <title>«Стань профессионалом» — закрытая группа по лепке и росписи 2.0 Третьяковой Вероники</title>
 <meta name="description" content="Закрытая группа по лепке и росписи 2.0 Третьяковой Вероники. Лепка из мастики и съедобная художественная роспись на мастике. Старт продаж — 29 октября 2026 года.">
 <script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="site.css?v=29-10-blok6-approved">
+<link rel="stylesheet" href="site.css?v=23-11-dekabr">
 </head>
 <body>
 
@@ -278,6 +278,101 @@
   <img class="cloud l3" src="img/puff4.png" alt="" loading="lazy">
 </section>
 
+<!-- 4а. Урок месяца: декабрь (23.11) -->
+<section class="sec month" id="month">
+<style>
+#month { padding-top: clamp(20px, 2.4vw, 36px); }
+#month .h2 { font-size: clamp(44px, 4vw, 60px); line-height: .94; color: #F6F2FC; }
+#month .h2 em { display: inline-block; font: 400 1.16em/1 var(--script); letter-spacing: 0; text-transform: none;
+  padding: .1em .24em .16em .2em; margin: -.5em 0 -.14em -.12em; position: relative; top: -.06em; z-index: 1;
+  background: linear-gradient(90deg, #D9CCFF 0%, #C9B2FF 45%, #F1B6DA 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#month .mo-card { margin-top: clamp(22px, 2.6vw, 36px); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: stretch;
+  border-radius: 34px; overflow: hidden; background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); }
+#month .mo-photo { position: relative; min-height: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
+#month .mo-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 66%; transition: scale 1.2s cubic-bezier(.2, .7, .2, 1); }
+#month .mo-card:hover .mo-photo img { scale: 1.03; }
+#month .mo-text { position: relative; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 3.6vw, 56px); }
+#month .mo-pill { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; line-height: 1.2;
+  color: #F3EEFB; background: rgba(165, 142, 242, .16); box-shadow: inset 0 0 0 1px rgba(196, 179, 255, .32); }
+#month .mo-pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--lilac-light); box-shadow: 0 0 0 4px rgba(196, 179, 255, .18); animation: moPulse 2.4s ease-in-out infinite; }
+@keyframes moPulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+#month .mo-title { margin-top: 0; font: 400 clamp(46px, 4.6vw, 72px)/.92 var(--bebas); text-transform: uppercase; letter-spacing: .012em; color: #fff; }
+#month .mo-desc { margin-top: 16px; display: flex; gap: 10px; align-items: flex-start; font-size: 18px; line-height: 1.45; color: #E4DEEC; }
+#month .mo-desc svg { width: 12px; height: 12px; flex: none; margin-top: 7px; color: var(--lilac-light); }
+#month .mo-thumbs { margin-top: clamp(22px, 2.4vw, 32px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 520px; }
+#month .mo-thumbs img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 18px; box-shadow: 0 20px 34px -22px rgba(0, 0, 0, .8); transition: translate .5s cubic-bezier(.2, .7, .2, 1); }
+#month .mo-thumbs img:nth-child(2) { object-position: 50% 20%; }
+#month .mo-thumbs img:hover { translate: 0 -6px; }
+#month .mo-text .btn { margin-top: clamp(24px, 2.6vw, 34px); align-self: flex-start; }
+#month .mo-card { position: relative; }
+#month .mo-fall { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+#month .mo-fall i { position: absolute; top: -24px; left: var(--x); width: var(--s); height: var(--s); color: #fff; opacity: var(--o, .8);
+  filter: drop-shadow(0 1px 2px rgba(60, 40, 110, .35)); animation: moFall var(--t, 12s) linear var(--dl, 0s) infinite; }
+#month .mo-fall svg { display: block; width: 100%; height: 100%; }
+@keyframes moFall { 0% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(var(--w, 18px), calc(var(--hh, 1150px) * .5)) rotate(180deg); }
+  100% { transform: translate(0, var(--hh, 1150px)) rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #month .mo-fall i { animation: none; top: var(--y, 20%); } }
+#month .mo-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; }
+#month .mo-cal { position: relative; width: 206px; padding: 0 0 14px; border-radius: 18px; background: #F7F2FF; color: #2C1F55; rotate: 4deg;
+  box-shadow: 0 26px 44px -22px rgba(0, 0, 0, .8), 0 0 0 1px rgba(255, 255, 255, .5); transition: rotate .6s cubic-bezier(.2, .7, .2, 1); }
+#month .mo-card:hover .mo-cal { rotate: 0deg; }
+#month .mo-cal::before, #month .mo-cal::after { content: ""; position: absolute; top: -9px; width: 10px; height: 22px; border-radius: 6px;
+  background: linear-gradient(180deg, #E6DDFA, #A58EF2); box-shadow: 0 2px 4px rgba(0, 0, 0, .35); z-index: 1; }
+#month .mo-cal::before { left: 30%; } #month .mo-cal::after { right: 30%; }
+#month .mo-cal-top { padding: 16px 14px 9px; border-radius: 18px 18px 0 0; text-align: center; color: #fff;
+  background: radial-gradient(90% 140% at 100% 0%, rgba(241, 182, 218, .55) 0%, rgba(241, 182, 218, 0) 60%), linear-gradient(160deg, #6B4FCB 0%, #3A2868 100%); }
+#month .mo-cal-top b { display: block; font: 400 34px/1 var(--script); }
+#month .mo-cal-top span { display: block; margin-top: 2px; font: 400 15px/1 var(--bebas); letter-spacing: .2em; opacity: .8; }
+#month .mo-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px 0; padding: 10px 10px 0; text-align: center; font-size: 11px; line-height: 20px; font-weight: 500; }
+#month .mo-cal-grid em { font-style: normal; font-size: 9.5px; color: #8C7FA8; }
+#month .mo-cal-grid .we { color: #B0558F; }
+#month .mo-cal-grid .ny { position: relative; color: #fff; font-weight: 600; }
+#month .mo-cal-grid .ny::before { content: ""; position: absolute; inset: -1px 1px; z-index: -1; border-radius: 50%; background: linear-gradient(135deg, #F1B6DA, #A58EF2); }
+#month .mo-cal-grid .ny::after { content: "✦"; position: absolute; top: -9px; right: -3px; font-size: 10px; color: #E58BC0; animation: tw 2.4s ease-in-out infinite; }
+#month .mo-cal-grid span { position: relative; z-index: 0; }
+@media (max-width: 899px) {
+  #month .mo-card { grid-template-columns: minmax(0, 1fr); }
+  #month .mo-photo { aspect-ratio: 4 / 5; }
+  #month .mo-text { padding: 24px 22px 26px; }
+  #month .mo-head { grid-template-columns: minmax(0, 1fr); }
+  #month .mo-cal { position: absolute; right: 18px; top: -200px; width: 150px; z-index: 3; }
+  #month .mo-cal-top { padding: 13px 10px 7px; } #month .mo-cal-top b { font-size: 27px; } #month .mo-cal-top span { font-size: 12px; }
+  #month .mo-cal-grid { padding: 7px 7px 0; font-size: 9px; line-height: 15px; gap: 2px 0; } #month .mo-cal-grid em { font-size: 7.5px; }
+  #month .mo-cal { padding-bottom: 9px; }
+}
+@media (max-width: 599px) {
+  #month .h2 { font-size: 41px; }
+  #month .mo-card { border-radius: 26px; }
+  #month .mo-title { font-size: 44px; }
+  #month .mo-desc { font-size: 16.5px; }
+  #month .mo-thumbs { gap: 8px; }
+  #month .mo-thumbs img { border-radius: 14px; }
+}
+</style>
+  <div class="wrap">
+    <h2 class="h2 rv">Урок месяца<br><em>декабрь</em></h2>
+    <article class="mo-card rv" style="--d:.08s">
+      <div class="mo-fall" aria-hidden="true"><i style="--x:43%;--s:12px;--t:13.2s;--dl:-0.6s;--w:-24px;--o:0.85;--y:79%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:9%;--s:18px;--t:11.7s;--dl:-1.0s;--w:24px;--o:0.55;--y:35%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:13%;--s:18px;--t:13.4s;--dl:-11.1s;--w:-24px;--o:0.7;--y:85%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:82%;--s:18px;--t:17.6s;--dl:-10.1s;--w:24px;--o:0.55;--y:33%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:7%;--s:18px;--t:16.9s;--dl:-4.9s;--w:-14px;--o:0.55;--y:78%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:41%;--s:18px;--t:16.5s;--dl:-3.0s;--w:-14px;--o:0.85;--y:17%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:72%;--s:22px;--t:10.5s;--dl:-0.6s;--w:-14px;--o:0.95;--y:73%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:56%;--s:14px;--t:13.7s;--dl:-12.7s;--w:14px;--o:0.85;--y:36%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:25%;--s:22px;--t:16.2s;--dl:-1.3s;--w:14px;--o:0.95;--y:48%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:95%;--s:16px;--t:12.3s;--dl:-12.1s;--w:-24px;--o:0.95;--y:26%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:45%;--s:12px;--t:17.5s;--dl:-7.4s;--w:-24px;--o:0.85;--y:48%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:90%;--s:14px;--t:14.8s;--dl:-8.6s;--w:24px;--o:0.55;--y:16%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:36%;--s:16px;--t:15.6s;--dl:-1.0s;--w:14px;--o:0.95;--y:41%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:93%;--s:16px;--t:17.1s;--dl:-5.9s;--w:24px;--o:0.85;--y:26%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:80%;--s:10px;--t:13.9s;--dl:-3.0s;--w:14px;--o:0.7;--y:36%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i><i style="--x:52%;--s:16px;--t:17.3s;--dl:-8.6s;--w:-14px;--o:0.95;--y:56%"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3.6 10.4 7 9.6 6.1 6.2M20.4 13.6 17 14.4l.9 3.4M3.6 13.6 7 14.4l-.9 3.4M20.4 10.4 17 9.6l.9-3.4"/></g></svg></i></div>
+      <figure class="mo-photo"><img src="img/kozlik-l.jpg" alt="Урок «Новогодний козлик»: фигурка козлика в шапке и шарфе" loading="lazy"></figure>
+      <div class="mo-text">
+        <div class="mo-head">
+          <div>
+            <h3 class="mo-title">«Новогодний <br>козлик»</h3>
+            <p class="mo-desc"><svg viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Каждый месяц — новая тема.</span></p>
+          </div>
+          <div class="mo-cal" aria-hidden="true"><div class="mo-cal-top"><b>Декабрь</b><span>2026</span></div><div class="mo-cal-grid"><em>пн</em><em>вт</em><em>ср</em><em>чт</em><em>пт</em><em class="we">сб</em><em class="we">вс</em><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span class="we">5</span><span class="we">6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span class="we">12</span><span class="we">13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span class="we">19</span><span class="we">20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span class="we">26</span><span class="we">27</span><span>28</span><span>29</span><span>30</span><span class="ny">31</span></div></div>
+        </div>
+        <div class="mo-thumbs">
+          <img src="img/kozlik-1.jpg" alt="" loading="lazy">
+          <img src="img/kozlik-2.jpg" alt="" loading="lazy">
+          <img src="img/kozlik-3.jpg" alt="" loading="lazy">
+        </div>
+        <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- 5. Запуски и формат -->
 <section class="sec launch" id="launch">
   <div class="wrap launch-grid">
@@ -398,17 +493,64 @@
 
 <!-- 7. Тарифы -->
 <section class="sec price" id="price">
+<style>
+#price .sv-year { width: 48.37%; }
+#price .sv-row--y em { width: 51.63%; }
+#price .tar-promo { margin-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 14px;
+  background: rgba(165, 142, 242, .14); box-shadow: inset 0 0 0 1px rgba(196, 179, 255, .26); font-size: 13px; line-height: 1.2; color: #E9E2F7; }
+#price .tar-promo span { white-space: nowrap; }
+#price .tar-promo b { font-size: 16px; font-weight: 600; color: #fff; white-space: nowrap; }
+#price .tar--year .tar-promo { background: rgba(255, 255, 255, .1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2); }
+#price .promo { margin-top: 18px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px clamp(28px, 4vw, 64px); align-items: center;
+  padding: clamp(24px, 2.6vw, 34px) clamp(24px, 3.4vw, 48px); border-radius: 30px;
+  background: radial-gradient(70% 120% at 0% 50%, rgba(150, 118, 240, .42) 0%, rgba(150, 118, 240, 0) 70%), linear-gradient(165deg, #4A3490 0%, #2C1F55 100%);
+  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .8); }
+#price .promo { position: relative; overflow: hidden; }
+#price .coupon { --cut: 232px; position: relative; display: grid; grid-template-columns: var(--cut) auto; align-items: center; overflow: hidden; rotate: -2.5deg;
+  border-radius: 22px; color: #2C1F55; background: linear-gradient(120deg, #FFF7FC 0%, #F6E9FF 45%, #F2D3EA 100%);
+  box-shadow: 0 30px 50px -26px rgba(0, 0, 0, .85);
+  -webkit-mask: radial-gradient(circle 13px at var(--cut) 0, #0000 97%, #000) , radial-gradient(circle 13px at var(--cut) 100%, #0000 97%, #000);
+  -webkit-mask-composite: source-in; mask: radial-gradient(circle 13px at var(--cut) 0, #0000 97%, #000), radial-gradient(circle 13px at var(--cut) 100%, #0000 97%, #000);
+  mask-composite: intersect; transition: rotate .6s cubic-bezier(.2, .7, .2, 1); }
+#price .promo:hover .coupon { rotate: 0deg; }
+#price .cp-pct { display: flex; align-items: flex-start; justify-content: center; padding: 26px 14px 18px 18px; }
+#price .cp-pct b { font: 400 104px/1 var(--bebas); letter-spacing: 0; padding: .06em .03em 0; margin: -.14em 0 -.12em;
+  background: linear-gradient(160deg, #6B4FCB 0%, #B0558F 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#price .cp-pct span { margin: 4px 0 0 4px; font: 400 46px/.8 var(--bebas); color: #B0558F; }
+#price .cp-code { display: grid; gap: 4px; padding: 20px 30px 20px 28px; border-left: 2px dashed rgba(107, 79, 203, .4); }
+#price .cp-code span { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .14em; color: #8C7FA8; }
+#price .cp-code b { font: 400 50px/1 var(--bebas); letter-spacing: .06em; color: #2C1F55; }
+#price .cp-code small { font-size: 13px; color: #6E5F8C; }
+#price .cp-shine { position: absolute; inset: -20% auto -20% -30%; width: 22%; rotate: 18deg; pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .85), rgba(255, 255, 255, 0)); animation: cpShine 4.5s ease-in-out infinite; }
+@keyframes cpShine { 0%, 55% { translate: 0 0; } 85%, 100% { translate: 700% 0; } }
+@media (prefers-reduced-motion: reduce) { #price .cp-shine { display: none; } }
+#price .tar-promo i { margin-left: 5px; padding: 2px 6px; border-radius: 999px; font-style: normal; font-size: 11px; font-weight: 600; color: #2C1F55;
+  background: linear-gradient(120deg, #FFF0F8, #F2C6E2); }
+#price .promo-h { font: 400 clamp(30px, 2.6vw, 40px)/1 var(--bebas); text-transform: uppercase; letter-spacing: .012em; color: #fff; }
+#price .promo-text p + p { margin-top: 10px; font-size: 16px; line-height: 1.45; color: rgba(243, 237, 255, .82); max-width: 70ch; }
+#price .promo-text b { font-weight: 600; color: #fff; }
+@media (max-width: 599px) { #price .sv-row--y em { width: auto; } }
+@media (max-width: 699px) {
+  #price .promo { grid-template-columns: minmax(0, 1fr); padding: 26px 18px 22px; border-radius: 26px; }
+  #price .coupon { --cut: 128px; justify-self: center; rotate: -2deg; }
+  #price .cp-pct { padding: 20px 6px 14px; } #price .cp-pct b { font-size: 70px; } #price .cp-pct span { font-size: 30px; margin-top: 2px; }
+  #price .cp-code { padding: 14px 18px 14px 16px; } #price .cp-code b { font-size: 36px; } #price .cp-code span, #price .cp-code small { font-size: 11px; }
+  #price .promo-text p + p { font-size: 15px; }
+}
+</style>
   <div class="wrap">
     <h2 class="h2 rv">Тарифы <em>и стоимость участия</em></h2>
     <div class="tars">
       <article class="tar rv">
         <h3 class="tar-name">1 месяц</h3>
         <p class="tar-lbl">Цена тарифа</p>
-        <p class="tar-price">3 490 ₽</p>
+        <p class="tar-price">4 650 ₽</p>
         <dl class="tar-rows">
-          <div><dt>Если платить каждый месяц</dt><dd>3 490 ₽</dd></div>
+          <div><dt>Если платить каждый месяц</dt><dd>4 650 ₽</dd></div>
           <div class="eco"><dt>Экономия</dt><dd>—</dd></div>
         </dl>
+        <p class="tar-promo"><span>С промокодом <i>−25&nbsp;%</i></span><b>3 490 ₽</b></p>
         <p class="tar-auto"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8a5 5 0 1 1-1.6-3.7M13 2.8v2.6h-2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Продлевается автоматически</p>
       </article>
       <article class="tar rv" style="--d:.08s">
@@ -416,9 +558,10 @@
         <p class="tar-lbl">Цена тарифа</p>
         <p class="tar-price">7 990 ₽</p>
         <dl class="tar-rows">
-          <div class="old"><dt>Если платить каждый месяц</dt><dd>10 470 ₽</dd></div>
-          <div class="eco"><dt>Экономия</dt><dd>2 480 ₽</dd></div>
+          <div class="old"><dt>Если платить каждый месяц</dt><dd>13 950 ₽</dd></div>
+          <div class="eco"><dt>Экономия</dt><dd>5 960 ₽</dd></div>
         </dl>
+        <p class="tar-promo"><span>С промокодом <i>−25&nbsp;%</i></span><b>5 993 ₽</b></p>
         <p class="tar-auto"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8a5 5 0 1 1-1.6-3.7M13 2.8v2.6h-2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Продлевается автоматически</p>
       </article>
       <article class="tar rv" style="--d:.16s">
@@ -426,9 +569,10 @@
         <p class="tar-lbl">Цена тарифа</p>
         <p class="tar-price">15 990 ₽</p>
         <dl class="tar-rows">
-          <div class="old"><dt>Если платить каждый месяц</dt><dd>20 940 ₽</dd></div>
-          <div class="eco"><dt>Экономия</dt><dd>4 950 ₽</dd></div>
+          <div class="old"><dt>Если платить каждый месяц</dt><dd>27 900 ₽</dd></div>
+          <div class="eco"><dt>Экономия</dt><dd>11 910 ₽</dd></div>
         </dl>
+        <p class="tar-promo"><span>С промокодом <i>−25&nbsp;%</i></span><b>11 993 ₽</b></p>
         <p class="tar-auto"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8a5 5 0 1 1-1.6-3.7M13 2.8v2.6h-2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Продлевается автоматически</p>
       </article>
       <article class="tar tar--year rv" style="--d:.24s">
@@ -436,19 +580,31 @@
         <p class="tar-lbl">Цена тарифа</p>
         <p class="tar-price">26 990 ₽</p>
         <dl class="tar-rows">
-          <div class="old"><dt>Если платить каждый месяц</dt><dd>41 880 ₽</dd></div>
-          <div class="eco"><dt>Экономия</dt><dd>14 890 ₽</dd></div>
+          <div class="old"><dt>Если платить каждый месяц</dt><dd>55 800 ₽</dd></div>
+          <div class="eco"><dt>Экономия</dt><dd>28 810 ₽</dd></div>
         </dl>
+        <p class="tar-promo"><span>С промокодом <i>−25&nbsp;%</i></span><b>20 243 ₽</b></p>
         <p class="tar-auto"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Не продлевается автоматически</p>
       </article>
     </div>
+    <div class="promo rv">
+      <div class="coupon" aria-label="Промокод BONBON, скидка 25 %">
+        <p class="cp-pct"><b>−25</b><span>%</span></p>
+        <p class="cp-code"><span>промокод</span><b>BONBON</b><small>на&nbsp;первую покупку</small></p>
+        <i class="cp-shine" aria-hidden="true"></i>
+      </div>
+      <div class="promo-text">
+        <p class="promo-h">Скидка 25&nbsp;% на&nbsp;первую покупку</p>
+        <p>Введите промокод в&nbsp;боте, затем выберите тариф. Скидка применяется <b>только один раз</b>, к&nbsp;первому выбранному тарифу: использовать промокод повторно для другого тарифа не&nbsp;получится. Промокод действует только для новых пользователей.</p>
+      </div>
+    </div>
     <div class="save rv">
       <div class="save-viz" aria-hidden="true">
-        <div class="sv-row"><span class="sv-l">Если платить каждый месяц</span><span class="sv-bar"><i class="sv-full"><b>41 880 ₽</b></i></span></div>
-        <div class="sv-row sv-row--y"><span class="sv-l">12 месяцев</span><span class="sv-bar"><i class="sv-year"><b>26 990 ₽</b></i></span><em>Экономия 14 890 ₽</em></div>
+        <div class="sv-row"><span class="sv-l">Если платить каждый месяц</span><span class="sv-bar"><i class="sv-full"><b>55 800 ₽</b></i></span></div>
+        <div class="sv-row sv-row--y"><span class="sv-l">12 месяцев</span><span class="sv-bar"><i class="sv-year"><b>26 990 ₽</b></i></span><em>Экономия 28 810 ₽</em></div>
       </div>
       <div class="save-text">
-        <p>Например, если оплачивать обучение каждый месяц в течение года, общая сумма составит 41 880 ₽. При покупке годового тарифа — 26 990 ₽. Экономия — 14 890 ₽.</p>
+        <p>Например, если оплачивать обучение каждый месяц в течение года, общая сумма составит 55 800 ₽. При покупке годового тарифа — 26 990 ₽. Экономия — 28 810 ₽.</p>
         <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       </div>
     </div>
