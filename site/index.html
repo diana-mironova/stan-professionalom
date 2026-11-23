@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>«Стань профессионалом» — закрытая группа по лепке и росписи 2.0 Третьяковой Вероники</title>
 <meta name="description" content="Закрытая группа по лепке и росписи 2.0 Третьяковой Вероники. Лепка из мастики и съедобная художественная роспись на мастике. Старт продаж — 29 октября 2026 года.">
 <script>document.documentElement.classList.add('js');</script>
-<link rel="stylesheet" href="site.css?v=23-11-dekabr">
+<link rel="stylesheet" href="site.css?v=23-11-15urokov">
 </head>
 <body>
 
@@ -40,8 +40,8 @@
         <div class="hv-cta">
           <a class="btn" href="https://t.me/Trtiakova_School_bot">Присоединиться<span class="arr"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
           <div class="hv-facts">
-            <p><b>13</b><span>уроков уже<br>на&nbsp;старте</span></p>
-            <p><b>5</b><span>тематических<br>композиций</span></p>
+            <p><b>15</b><span>уроков уже<br>на&nbsp;старте</span></p>
+            <p><b>7</b><span>тематических<br>композиций</span></p>
           </div>
         </div>
       </div>
@@ -125,8 +125,8 @@
           <span class="arch arch--sm" style="--r:0deg; z-index:2"><img src="img/jack-solo.jpg" alt="" loading="lazy"></span>
         </div>
         <div class="fbody">
-          <h3><span class="n">13 уроков</span> уже на старте</h3>
-          <p>Сразу после вступления тебе будут доступны <mark>13 уроков</mark>, объединённых в пять тематических композиций.</p>
+          <h3><span class="n">15 уроков</span> уже на старте</h3>
+          <p>Сразу после вступления тебе будут доступны <mark>15 уроков</mark>, объединённых в семь тематических композиций.</p>
         </div>
       </article>
       <article class="fcard rv" style="--d:.1s">
@@ -160,18 +160,18 @@
   </div>
 </section>
 
-<!-- 4. Пять композиций: слайдер -->
+<!-- 4. Композиции: слайдер -->
 <section class="sec lessons" id="lessons">
   <div class="wrap">
     <div class="ls-top">
-      <h2 class="h2 rv ls-h"><span class="ls-a"><span class="n">13</span> стартовых уроков:</span></h2>
-      <p class="ls-five rv" style="--d:.06s"><b>5</b> <span class="ls-five-t">тематических <br>композиций</span></p>
+      <h2 class="h2 rv ls-h"><span class="ls-a"><span class="n">15</span> стартовых уроков:</span></h2>
+      <p class="ls-five rv" style="--d:.06s"><b>7</b> <span class="ls-five-t">тематических <br>композиций</span></p>
       <div class="ls-arr rv" style="--d:.1s">
         <button class="sl-arr sl-prev" type="button" aria-label="Предыдущая композиция"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M15 9H4M8 4.5 3.5 9 8 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button class="sl-arr sl-next" type="button" aria-label="Следующая композиция"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
-    <div class="slider rv" id="slider" aria-roledescription="carousel" aria-label="Пять композиций">
+    <div class="slider rv" id="slider" aria-roledescription="carousel" aria-label="Композиции курса">
       <div class="sl-nav">
         <div class="sl-tabs" role="tablist">
         <button class="sl-tab" type="button" role="tab" aria-controls="sl-1" aria-label="«Арабская ночь»"><span class="arch arch--sm"><img src="img/arab.jpg" alt="" loading="lazy" draggable="false"></span><span class="sl-tab-n">1</span><span class="sl-tab-t">«Арабская ночь»</span><i class="sl-bar"><i></i></i></button>
@@ -373,25 +373,20 @@
   </div>
 </section>
 
-<!-- 5. Запуски и формат -->
+<!-- 5. Формат участия -->
 <section class="sec launch" id="launch">
+  <style>
+    /* 23.11: карточка «Вступление открыто не всегда» убрана, формат участия один на всю ширину; :is(#allrecords, body) — чтобы в Тильде перебить её #allrecords #launch */
+    @media (min-width: 1024px) {
+      :is(#allrecords, body) #launch .launch-grid { grid-template-columns: minmax(0, 1fr); }
+      :is(#allrecords, body) #launch .lcard--2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: clamp(32px, 3.6vw, 56px); }
+      :is(#allrecords, body) #launch .lcard--2 .h2 { grid-column: 1; grid-row: 1; }
+      :is(#allrecords, body) #launch .lcard--2 .lstars { grid-column: 1; grid-row: 2; }
+      :is(#allrecords, body) #launch .lcard--2 .lhot { grid-column: 1; grid-row: 3; align-self: end; }
+      :is(#allrecords, body) #launch .lcard--2 .lv { grid-column: 2; grid-row: 1 / 4; align-self: center; height: 270px; margin: 0; }
+    }
+  </style>
   <div class="wrap launch-grid">
-    <article class="lcard rv">
-      <h2 class="h2">Вступление открыто<br><em>не&nbsp;всегда</em></h2>
-      <div class="lv lv-time" aria-hidden="true">
-        <img class="dk dk-key" src="img/d-key.png" alt="" loading="lazy">
-        <p class="tl-date"><b>29 октября</b><span>2026</span></p>
-        <div class="tl-line"><i></i></div>
-        <span class="tl-gap" style="--x:23%; --k:1">≈ 3 мес.</span><span class="tl-gap" style="--x:53%; --k:2">≈ 3 мес.</span><span class="tl-gap" style="--x:83%; --k:3">≈ 3 мес.</span>
-        <span class="tl-dot tl-dot--now" style="--x:8%; --k:0"></span><span class="tl-dot" style="--x:38%; --k:1"></span><span class="tl-dot" style="--x:68%; --k:2"></span><span class="tl-dot tl-dot--far" style="--x:98%; --k:3"></span>
-        <span class="tl-cap tl-cap--now" style="--x:8%; --k:0">старт продаж</span><span class="tl-cap" style="--x:38%; --k:1">следующий набор</span>
-      </div>
-      <ul class="lstars">
-        <li><svg viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>Присоединиться к&nbsp;группе можно будет во&nbsp;время специальных запусков, которые планируются <b>ориентировочно один раз в&nbsp;три месяца</b>.</span></li>
-        <li><svg viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M5 0 C5.4 3.6 6.4 4.6 10 5 C6.4 5.4 5.4 6.4 5 10 C4.6 6.4 3.6 5.4 0 5 C3.6 4.6 4.6 3.6 5 0Z"/></svg><span>После закрытия продаж нужно будет дождаться следующего набора.</span></li>
-      </ul>
-      <p class="lhot lhot--soft">Старт продаж первого запуска — <b>29&nbsp;октября 2026&nbsp;года</b>. Стоимость подписки при следующих запусках может измениться, поэтому <b>первый запуск — возможность присоединиться на&nbsp;первоначальных условиях</b>.</p>
-    </article>
     <article class="lcard lcard--2 rv" style="--d:.12s">
       <h2 class="h2">Выбирай свой<br><em>формат участия</em></h2>
       <div class="lv lv-terms" aria-hidden="true">
@@ -726,6 +721,7 @@
    компьютер: три полупрозрачных фото сзади справа полудугой; телефон: главное по центру, два полупрозрачных по бокам */
 (() => {
   const DATA = [
+    ['kozlik-hero', '«Новогодний козлик»'],
     ['jack-full', '«Капитан Джек Воробей»'],
     ['lilo', '«Лило и Стич»'],
     ['arab', '«Арабская ночь»'],
